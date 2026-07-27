@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CarZ3 — привезём ваш автомобиль под заказ из Японии, США, Кореи и других стран</title>
-  <meta name="description"
-    content="Подбираем и привозим автомобили под заказ из Японии, США, Грузии, Кореи, стран ЕС и Китая. Официальный договор, прозрачная цена на каждом этапе, полный контроль логистики от покупки до выдачи.">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="CarZ3 — привезём ваш автомобиль под заказ">
-  <meta property="og:description"
-    content="Автомобили под заказ из Японии, США, Грузии, Кореи, стран ЕС и Китая. Официальный договор, полный контроль логистики.">
-  <meta property="og:locale" content="ru_RU">
-  <meta property="og:site_name" content="CarZ3">
-  <!-- OG-КАРТИНКА: добавить og:image (1200×630) — нужна для превью при отправке ссылки -->
-  <meta name="theme-color" content="#0a0a0a">
-  <link rel="icon" href="images/favicon.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-
-  <!-- FAVICON И ПРЕВЬЮ ССЫЛКИ: файлов пока нет в проекте.
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CarZ3 — привезём ваш автомобиль под заказ из Японии, США, Кореи и других стран</title>
+<meta name="description" content="Подбираем и привозим автомобили под заказ из Японии, США, Грузии, Кореи, стран ЕС и Китая. Официальный договор, прозрачная цена на каждом этапе, полный контроль логистики от покупки до выдачи.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CarZ3 — привезём ваш автомобиль под заказ">
+<meta property="og:description" content="Автомобили под заказ из Японии, США, Грузии, Кореи, стран ЕС и Китая. Официальный договор, полный контроль логистики.">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="CarZ3">
+<!-- OG-КАРТИНКА: добавить og:image (1200×630) — нужна для превью при отправке ссылки -->
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="data:,">
+<!-- FAVICON И ПРЕВЬЮ ССЫЛКИ: файлов пока нет в проекте.
      Подготовьте из логотипа на тёмном фоне (квадратный кроп):
        images/favicon-32.png       — 32×32
        images/apple-touch-icon.png — 180×180
@@ -26,501 +21,542 @@
      Затем удалите строку <link rel="icon" href="data:,"> выше
      и раскомментируйте четыре строки ниже.
      Пока файлов нет — включать нельзя, браузер будет писать 404 в консоль. -->
-  <!--
+<!--
 <link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <meta property="og:image" content="images/og-cover.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <header class="header">
-    <div class="container header__inner">
-      <a href="index.html" class="logo">CarZ3</a>
+<header class="header">
+  <div class="container header__inner">
+    <a href="index.html" class="logo">CarZ3</a>
 
-      <nav class="header__nav" aria-label="Основная навигация">
-        <a href="#about">О нас</a>
-        <a href="#process">Как мы работаем</a>
-        <a href="#geo">Логистика</a>
-        <a href="#safety">Гарантии</a>
-        <a href="#reviews">Отзывы</a>
-        <a href="#contacts">Контакты</a>
-      </nav>
-
-      <div class="header__actions">
-        <a href="catalog.html" class="btn btn--gold btn--sm">Открыть каталог</a>
-      </div>
-
-      <button class="burger" type="button" data-burger aria-label="Открыть меню" aria-expanded="false"
-        aria-controls="mobileMenu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <div class="menu" id="mobileMenu" data-menu>
-    <nav class="menu__nav" aria-label="Мобильная навигация">
+    <nav class="header__nav" aria-label="Основная навигация">
       <a href="#about">О нас</a>
       <a href="#process">Как мы работаем</a>
       <a href="#geo">Логистика</a>
       <a href="#safety">Гарантии</a>
       <a href="#reviews">Отзывы</a>
-      <a href="catalog.html">Каталог</a>
       <a href="#contacts">Контакты</a>
     </nav>
-    <div class="menu__foot">
-      <a href="tel:+79680734649" class="menu__phone">+7 (968) 073-46-49</a>
-      <a href="mailto:carz3zakaz@mail.ru" class="menu__mail">carz3zakaz@mail.ru</a>
-      <div class="menu__btns">
-        <a href="https://wa.me/79680734649" class="btn btn--outline btn--sm" target="_blank"
-          rel="noopener noreferrer">WhatsApp</a>
-        <a href="https://t.me/carz3zakaz3" class="btn btn--gold btn--sm" target="_blank"
-          rel="noopener noreferrer">Telegram</a>
-      </div>
+
+    <div class="header__actions">
+      <a href="catalog.html" class="btn btn--gold btn--sm">Открыть каталог</a>
+    </div>
+
+    <button class="burger" type="button" data-burger aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="menu" id="mobileMenu" data-menu>
+  <nav class="menu__nav" aria-label="Мобильная навигация">
+    <a href="#about">О нас</a>
+    <a href="#process">Как мы работаем</a>
+    <a href="#geo">Логистика</a>
+    <a href="#safety">Гарантии</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="catalog.html">Каталог</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+  <div class="menu__foot">
+    <a href="tel:+79680734649" class="menu__phone">+7 (968) 073-46-49</a>
+    <a href="mailto:carz3zakaz@mail.ru" class="menu__mail">carz3zakaz@mail.ru</a>
+    <div class="menu__btns">
+      <a href="https://wa.me/79680734649" class="btn btn--outline btn--sm" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="https://t.me/+0afANDHpwCtlZDJi" class="btn btn--gold btn--sm" target="_blank" rel="noopener noreferrer">Telegram</a>
     </div>
   </div>
+</div>
 
-  <main>
+<main>
 
-    <section class="hero" id="about">
-      <div class="hero__bg" aria-hidden="true"></div>
-      <div class="container">
-        <p class="eyebrow" data-reveal>Япония · США · Грузия · Корея · ЕС · Китай</p>
-        <h1 class="hero__title" data-reveal>Привезём ваш автомобиль под заказ</h1>
-        <p class="hero__lead" data-reveal>
-          Подбираем автомобиль под ваш бюджет и задачу, проверяем перед покупкой и ведём сделку
-          по официальному договору — с ценой, которая известна заранее и не меняется по дороге.
+  <section class="hero" id="about">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="container">
+      <p class="eyebrow" data-reveal>Япония · США · Грузия · Корея · ЕС · Китай</p>
+      <h1 class="hero__title" data-reveal>Привезём ваш автомобиль под заказ</h1>
+      <p class="hero__lead" data-reveal>
+        Подбираем автомобиль под ваш бюджет и задачу, проверяем перед покупкой и ведём сделку
+        по официальному договору — с ценой, которая известна заранее и не меняется по дороге.
+      </p>
+      <div class="hero__actions" data-reveal>
+        <a href="catalog.html" class="btn btn--gold btn--lg">Открыть каталог</a>
+        <a href="https://t.me/CarZ3_Catalog_bot" class="btn btn--outline btn--lg" target="_blank" rel="noopener noreferrer">Открыть в Telegram</a>
+      </div>
+      <p class="hero__trust" data-reveal>
+        Работаем по договору<span class="dot">·</span>Проверка перед покупкой<span class="dot">·</span>Без скрытых платежей
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="stats" data-reveal>
+        <div class="stat">
+          <div class="stat__num">6</div>
+          <div class="stat__label">направлений<br>поставки</div>
+        </div>
+        <div class="stat">
+          <!-- ЦИФРА: уточнить у клиента -->
+          <div class="stat__num">—</div>
+          <div class="stat__label">лет<br>на рынке</div>
+        </div>
+        <div class="stat">
+          <!-- ЦИФРА: уточнить у клиента -->
+          <div class="stat__num">—</div>
+          <div class="stat__label">довольных<br>клиентов</div>
+        </div>
+        <div class="stat">
+          <!-- ЦИФРА: уточнить у клиента -->
+          <div class="stat__num">—</div>
+          <div class="stat__label">дней средний<br>срок доставки</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section divider-top" id="catalog">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal>Каталог</p>
+        <h2 class="section-title" data-reveal>Сейчас доступны</h2>
+        <p class="section-lead" data-reveal>
+          Несколько предложений из актуального наличия. Полный список — на странице каталога.
         </p>
-        <div class="hero__actions" data-reveal>
-          <a href="catalog.html" class="btn btn--gold btn--lg">Открыть каталог</a>
-          <a href="https://t.me/CarZ3_Catalog_bot" class="btn btn--outline btn--lg" target="_blank"
-            rel="noopener noreferrer">Открыть в Telegram</a>
-        </div>
-        <p class="hero__trust" data-reveal>
-          Работаем по договору<span class="dot">·</span>Проверка перед покупкой<span class="dot">·</span>Без скрытых
-          платежей
+      </div>
+
+      <div class="cards-grid cards-grid--3" id="homeGrid" aria-live="polite"></div>
+
+      <div class="section-actions" data-reveal>
+        <a href="catalog.html" class="btn btn--outline">Смотреть все автомобили</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section divider-top" id="process">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal>Процесс</p>
+        <h2 class="section-title" data-reveal>Как мы работаем</h2>
+        <p class="section-lead" data-reveal>
+          Восемь шагов от заявки до ключей. На каждом вы знаете, что происходит с вашим автомобилем.
         </p>
       </div>
-    </section>
 
-    <section class="section section--tight">
-      <div class="container">
-        <div class="stats" data-reveal>
-          <div class="stat">
-            <div class="stat__num">6</div>
-            <div class="stat__label">направлений<br>поставки</div>
-          </div>
-          <div class="stat">
-            <!-- ЦИФРА: уточнить у клиента -->
-            <div class="stat__num">—</div>
-            <div class="stat__label">лет<br>на рынке</div>
-          </div>
-          <div class="stat">
-            <!-- ЦИФРА: уточнить у клиента -->
-            <div class="stat__num">—</div>
-            <div class="stat__label">довольных<br>клиентов</div>
-          </div>
-          <div class="stat">
-            <!-- ЦИФРА: уточнить у клиента -->
-            <div class="stat__num">—</div>
-            <div class="stat__label">дней средний<br>срок доставки</div>
+      <div class="process-layout">
+        <div class="process-steps">
+          <div class="timeline">
+            <span class="timeline__track" aria-hidden="true"></span>
+            <span class="timeline__fill" aria-hidden="true"></span>
+            <ol class="steps">
+              <li class="step" data-reveal>
+                <div class="step__marker">01</div>
+                <div class="step__body">
+                  <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M4 5h16v11H8l-4 4z"/>
+                    <path d="M8 9h8M8 12.5h5"/>
+                  </svg>
+                  <h3 class="step__title">Заявка</h3>
+                  <p class="step__desc">Оставляете заявку на сайте или в Telegram. Обсуждаем модель, бюджет, сроки и то, для чего нужен автомобиль.</p>
+                </div>
+              </li>
+
+              <li class="step" data-reveal>
+                <div class="step__marker">02</div>
+                <div class="step__body">
+                  <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="10.5" cy="10.5" r="6.5"/>
+                    <path d="m15.5 15.5 4.5 4.5"/>
+                  </svg>
+                  <h3 class="step__title">Подбор автомобиля</h3>
+                  <p class="step__desc">Находим подходящие варианты на нужном рынке — Японии, США, Грузии, Корее, странах ЕС или Китае — и присылаем их вам на согласование с отчётами.</p>
+                </div>
+              </li>
+
+              <li class="step" data-reveal>
+                <div class="step__marker">03</div>
+                <div class="step__body">
+                  <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7 4h10v16l-5-4-5 4z"/>
+                  </svg>
+                  <h3 class="step__title">Бронирование</h3>
+                  <p class="step__desc">Закрепляем выбранный автомобиль за вами, пока оформляются документы, — его не продадут другому покупателю.</p>
+                </div>
+              </li>
+
+              <li class="step" data-reveal>
+                <div class="step__marker">04</div>
+                <div class="step__body">
+                  <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M6 3h8l4 4v14H6z"/>
+                    <path d="M14 3v4h4"/>
+                    <path d="m9.5 14 1.8 1.8L15 12"/>
+                  </svg>
+                  <h3 class="step__title">Договор</h3>
+                  <p class="step__desc">Заключаем официальный договор: фиксируем комплектацию, итоговую стоимость и сроки поставки.</p>
+                </div>
+              </li>
+
+              <li class="step" data-reveal>
+                <div class="step__marker">05</div>
+                <div class="step__body">
+                  <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="6" width="18" height="12" rx="2"/>
+                    <path d="M3 10h18"/>
+                    <path d="M6.5 14.5h3.5"/>
+                  </svg>
+                  <h3 class="step__title">Оплата и отправка</h3>
+                  <p class="step__desc">После оплаты по договору автомобиль выкупается и отправляется в Россию. Присылаем подтверждение отгрузки.</p>
+                </div>
+              </li>
+
+              <li class="step" data-reveal>
+                <div class="step__marker">06</div>
+                <div class="step__body">
+                  <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 3 5 6v6c0 4.2 2.9 7.4 7 9 4.1-1.6 7-4.8 7-9V6z"/>
+                  </svg>
+                  <h3 class="step__title">Таможня</h3>
+                  <p class="step__desc">Берём на себя таможенное оформление, расчёт и уплату пошлин, подготовку документов для регистрации.</p>
+                </div>
+              </li>
+
+              <li class="step" data-reveal>
+                <div class="step__marker">07</div>
+                <div class="step__body">
+                  <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M2 6h12v10H2z"/>
+                    <path d="M14 9.5h4l3 3.5V16h-7z"/>
+                    <circle cx="7" cy="18.5" r="2"/>
+                    <circle cx="17" cy="18.5" r="2"/>
+                  </svg>
+                  <h3 class="step__title">Логистика</h3>
+                  <p class="step__desc">Доставляем автомобиль до вашего города и держим вас в курсе, где он находится в пути.</p>
+                </div>
+              </li>
+
+              <li class="step" data-reveal>
+                <div class="step__marker">08</div>
+                <div class="step__body">
+                  <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="8" cy="12" r="4"/>
+                    <path d="M12 12h9"/>
+                    <path d="M17.5 12v3"/>
+                    <path d="M20 12v2.2"/>
+                  </svg>
+                  <h3 class="step__title">Выдача автомобиля</h3>
+                  <p class="step__desc">Передаём автомобиль вам вместе с полным пакетом документов — можно ставить на учёт.</p>
+                </div>
+              </li>
+            </ol>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="section divider-top" id="catalog">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow" data-reveal>Каталог</p>
-          <h2 class="section-title" data-reveal>Сейчас доступны</h2>
-          <p class="section-lead" data-reveal>
-            Несколько предложений из актуального наличия. Полный список — на странице каталога.
-          </p>
-        </div>
-
-        <div class="cards-grid cards-grid--3" id="homeGrid" aria-live="polite"></div>
-
-        <div class="section-actions" data-reveal>
-          <a href="catalog.html" class="btn btn--outline">Смотреть все автомобили</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section divider-top" id="process">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow" data-reveal>Процесс</p>
-          <h2 class="section-title" data-reveal>Как мы работаем</h2>
-          <p class="section-lead" data-reveal>
-            Восемь шагов от заявки до ключей. На каждом вы знаете, что происходит с вашим автомобилем.
-          </p>
-        </div>
-
-        <div class="process-layout">
-          <div class="process-steps">
-            <div class="timeline">
-              <span class="timeline__track" aria-hidden="true"></span>
-              <span class="timeline__fill" aria-hidden="true"></span>
-              <ol class="steps">
-                <li class="step" data-reveal>
-                  <div class="step__marker">01</div>
-                  <div class="step__body">
-                    <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M4 5h16v11H8l-4 4z" />
-                      <path d="M8 9h8M8 12.5h5" />
-                    </svg>
-                    <h3 class="step__title">Заявка</h3>
-                    <p class="step__desc">Оставляете заявку на сайте или в Telegram. Обсуждаем модель, бюджет, сроки и
-                      то, для чего нужен автомобиль.</p>
-                  </div>
-                </li>
-
-                <li class="step" data-reveal>
-                  <div class="step__marker">02</div>
-                  <div class="step__body">
-                    <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <circle cx="10.5" cy="10.5" r="6.5" />
-                      <path d="m15.5 15.5 4.5 4.5" />
-                    </svg>
-                    <h3 class="step__title">Подбор автомобиля</h3>
-                    <p class="step__desc">Находим подходящие варианты на нужном рынке — Японии, США, Грузии, Корее,
-                      странах ЕС или Китае — и присылаем их вам на согласование с отчётами.</p>
-                  </div>
-                </li>
-
-                <li class="step" data-reveal>
-                  <div class="step__marker">03</div>
-                  <div class="step__body">
-                    <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M7 4h10v16l-5-4-5 4z" />
-                    </svg>
-                    <h3 class="step__title">Бронирование</h3>
-                    <p class="step__desc">Закрепляем выбранный автомобиль за вами, пока оформляются документы, — его не
-                      продадут другому покупателю.</p>
-                  </div>
-                </li>
-
-                <li class="step" data-reveal>
-                  <div class="step__marker">04</div>
-                  <div class="step__body">
-                    <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M6 3h8l4 4v14H6z" />
-                      <path d="M14 3v4h4" />
-                      <path d="m9.5 14 1.8 1.8L15 12" />
-                    </svg>
-                    <h3 class="step__title">Договор</h3>
-                    <p class="step__desc">Заключаем официальный договор: фиксируем комплектацию, итоговую стоимость и
-                      сроки поставки.</p>
-                  </div>
-                </li>
-
-                <li class="step" data-reveal>
-                  <div class="step__marker">05</div>
-                  <div class="step__body">
-                    <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <rect x="3" y="6" width="18" height="12" rx="2" />
-                      <path d="M3 10h18" />
-                      <path d="M6.5 14.5h3.5" />
-                    </svg>
-                    <h3 class="step__title">Оплата и отправка</h3>
-                    <p class="step__desc">После оплаты по договору автомобиль выкупается и отправляется в Россию.
-                      Присылаем подтверждение отгрузки.</p>
-                  </div>
-                </li>
-
-                <li class="step" data-reveal>
-                  <div class="step__marker">06</div>
-                  <div class="step__body">
-                    <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M12 3 5 6v6c0 4.2 2.9 7.4 7 9 4.1-1.6 7-4.8 7-9V6z" />
-                    </svg>
-                    <h3 class="step__title">Таможня</h3>
-                    <p class="step__desc">Берём на себя таможенное оформление, расчёт и уплату пошлин, подготовку
-                      документов для регистрации.</p>
-                  </div>
-                </li>
-
-                <li class="step" data-reveal>
-                  <div class="step__marker">07</div>
-                  <div class="step__body">
-                    <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M2 6h12v10H2z" />
-                      <path d="M14 9.5h4l3 3.5V16h-7z" />
-                      <circle cx="7" cy="18.5" r="2" />
-                      <circle cx="17" cy="18.5" r="2" />
-                    </svg>
-                    <h3 class="step__title">Логистика</h3>
-                    <p class="step__desc">Доставляем автомобиль до вашего города и держим вас в курсе, где он находится
-                      в пути.</p>
-                  </div>
-                </li>
-
-                <li class="step" data-reveal>
-                  <div class="step__marker">08</div>
-                  <div class="step__body">
-                    <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <circle cx="8" cy="12" r="4" />
-                      <path d="M12 12h9" />
-                      <path d="M17.5 12v3" />
-                      <path d="M20 12v2.2" />
-                    </svg>
-                    <h3 class="step__title">Выдача автомобиля</h3>
-                    <p class="step__desc">Передаём автомобиль вам вместе с полным пакетом документов — можно ставить на
-                      учёт.</p>
-                  </div>
-                </li>
-              </ol>
+        <aside class="process-panel" id="processPanel" aria-hidden="true">
+          <div class="panel-card">
+            <div class="panel__inner">
+              <div class="panel__num">01</div>
+              <div class="panel__icon"></div>
+              <div class="panel__title"></div>
+              <p class="panel__desc"></p>
+              <div class="panel__media" hidden></div>
             </div>
           </div>
-
-          <aside class="process-panel" id="processPanel" aria-hidden="true">
-            <div class="panel-card">
-              <div class="panel__inner">
-                <div class="panel__num">01</div>
-                <div class="panel__icon"></div>
-                <div class="panel__title"></div>
-                <p class="panel__desc"></p>
-                <div class="panel__media" hidden></div>
-              </div>
-            </div>
-          </aside>
-        </div>
+        </aside>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section divider-top" id="geo">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow" data-reveal>География</p>
-          <h2 class="section-title" data-reveal>Наша логистика</h2>
-          <p class="section-lead section-lead--wide" data-reveal>
-            Мы организуем поставки автомобилей в Россию из Японии, США, Грузии, Кореи, стран
-            Евросоюза и Китая. От момента покупки до доставки вся логистика — под нашим
-            контролем: работаем напрямую с портами и проверенными перевозчиками и выбираем
-            оптимальные маршруты, чтобы вы получали автомобиль в срок и без лишних затрат.
-          </p>
+  <section class="section divider-top" id="geo">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal>География</p>
+        <h2 class="section-title" data-reveal>Наша логистика</h2>
+        <p class="section-lead section-lead--wide" data-reveal>
+          Мы организуем поставки автомобилей в Россию из Японии, США, Грузии, Кореи, стран
+          Евросоюза и Китая. От момента покупки до доставки вся логистика — под нашим
+          контролем: работаем напрямую с портами и проверенными перевозчиками и выбираем
+          оптимальные маршруты, чтобы вы получали автомобиль в срок и без лишних затрат.
+        </p>
+      </div>
+
+      <div class="origins">
+        <article class="origin-card" data-reveal>
+          <span class="origin-card__num" aria-hidden="true">01</span>
+          <h3 class="origin-card__name">Япония</h3>
+        </article>
+
+        <article class="origin-card" data-reveal>
+          <span class="origin-card__num" aria-hidden="true">02</span>
+          <h3 class="origin-card__name">США</h3>
+        </article>
+
+        <article class="origin-card" data-reveal>
+          <span class="origin-card__num" aria-hidden="true">03</span>
+          <h3 class="origin-card__name">Грузия</h3>
+        </article>
+
+        <article class="origin-card" data-reveal>
+          <span class="origin-card__num" aria-hidden="true">04</span>
+          <h3 class="origin-card__name">Корея</h3>
+        </article>
+
+        <article class="origin-card" data-reveal>
+          <span class="origin-card__num" aria-hidden="true">05</span>
+          <h3 class="origin-card__name">Страны ЕС</h3>
+        </article>
+
+        <article class="origin-card" data-reveal>
+          <span class="origin-card__num" aria-hidden="true">06</span>
+          <h3 class="origin-card__name">Китай</h3>
+        </article>
+      </div>
+
+      <div class="origins-flow" aria-hidden="true"><span></span></div>
+
+      <div class="destination" data-reveal>
+        <div class="destination__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 4v15M6 13l6 6 6-6"/>
+          </svg>
         </div>
+        <p class="destination__name">Россия</p>
+        <p class="destination__label">Доставка до вашего города</p>
+      </div>
+    </div>
+  </section>
 
-        <div class="origins">
-          <article class="origin-card" data-reveal>
-            <span class="origin-card__num" aria-hidden="true">01</span>
-            <h3 class="origin-card__name">Япония</h3>
-          </article>
+  <section class="section divider-top" id="safety">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal>Гарантии</p>
+        <h2 class="section-title" data-reveal>Почему с нами безопасно</h2>
+        <p class="section-lead" data-reveal>
+          Четыре условия, на которых мы работаем с каждым клиентом.
+        </p>
+      </div>
 
-          <article class="origin-card" data-reveal>
-            <span class="origin-card__num" aria-hidden="true">02</span>
-            <h3 class="origin-card__name">США</h3>
-          </article>
-
-          <article class="origin-card" data-reveal>
-            <span class="origin-card__num" aria-hidden="true">03</span>
-            <h3 class="origin-card__name">Грузия</h3>
-          </article>
-
-          <article class="origin-card" data-reveal>
-            <span class="origin-card__num" aria-hidden="true">04</span>
-            <h3 class="origin-card__name">Корея</h3>
-          </article>
-
-          <article class="origin-card" data-reveal>
-            <span class="origin-card__num" aria-hidden="true">05</span>
-            <h3 class="origin-card__name">Страны ЕС</h3>
-          </article>
-
-          <article class="origin-card" data-reveal>
-            <span class="origin-card__num" aria-hidden="true">06</span>
-            <h3 class="origin-card__name">Китай</h3>
-          </article>
-        </div>
-
-        <div class="origins-flow" aria-hidden="true"><span></span></div>
-
-        <div class="destination" data-reveal>
-          <div class="destination__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-              stroke-linejoin="round">
-              <path d="M12 4v15M6 13l6 6 6-6" />
+      <div class="trust-grid">
+        <article class="trust-card" data-reveal>
+          <div class="trust-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 8h4l1.5-2.5h7L17 8h4v11H3z"/>
+              <circle cx="12" cy="13" r="3.5"/>
             </svg>
           </div>
-          <p class="destination__name">Россия</p>
-          <p class="destination__label">Доставка до вашего города</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section divider-top" id="safety">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow" data-reveal>Гарантии</p>
-          <h2 class="section-title" data-reveal>Почему с нами безопасно</h2>
-          <p class="section-lead" data-reveal>
-            Четыре условия, на которых мы работаем с каждым клиентом.
+          <h3 class="trust-card__title">Живое фото за 24 часа</h3>
+          <p class="trust-card__desc">
+            Наш специалист на месте осматривает автомобиль и присылает реальные снимки
+            в течение суток после запроса.
           </p>
-        </div>
+        </article>
 
-        <div class="trust-grid">
-          <article class="trust-card" data-reveal>
-            <div class="trust-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="M3 8h4l1.5-2.5h7L17 8h4v11H3z" />
-                <circle cx="12" cy="13" r="3.5" />
-              </svg>
-            </div>
-            <h3 class="trust-card__title">Живое фото за 24 часа</h3>
-            <p class="trust-card__desc">
-              Наш специалист на месте осматривает автомобиль и присылает реальные снимки
-              в течение суток после запроса.
-            </p>
-          </article>
-
-          <!-- ВАЖНО: формулировку этого пункта согласовать с клиентом до публикации.
+        <!-- ВАЖНО: формулировку этого пункта согласовать с клиентом до публикации.
              Условие финансовое — важно не исказить смысл. -->
-          <article class="trust-card" data-reveal>
-            <div class="trust-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="M3 9a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                <path d="M3 9V7a2 2 0 0 1 2-2h11" />
-                <circle cx="16.5" cy="13.5" r="1.2" />
-              </svg>
-            </div>
-            <h3 class="trust-card__title">Можем привезти за свой счёт</h3>
-            <p class="trust-card__desc">
-              Не требуем полную предоплату вслепую: возможен вариант, когда мы выкупаем
-              автомобиль сами.
-            </p>
-          </article>
-
-          <article class="trust-card" data-reveal>
-            <div class="trust-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <rect x="2.5" y="6.5" width="19" height="11" rx="2" />
-                <path d="M6.5 10.5h11" />
-                <path d="M6.5 13.5h7" />
-              </svg>
-            </div>
-            <h3 class="trust-card__title">Под ключ на номерах РФ</h3>
-            <p class="trust-card__desc">
-              Автомобиль передаётся полностью оформленным и готовым к эксплуатации.
-            </p>
-          </article>
-
-          <article class="trust-card" data-reveal>
-            <div class="trust-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="M12.5 3H20v7.5l-8.8 8.8a1.5 1.5 0 0 1-2.1 0l-5.4-5.4a1.5 1.5 0 0 1 0-2.1z" />
-                <circle cx="16.4" cy="7.6" r="1.3" />
-              </svg>
-            </div>
-            <h3 class="trust-card__title">Все платежи известны заранее</h3>
-            <p class="trust-card__desc">
-              Работаем по договору, полная стоимость фиксируется до начала сделки,
-              скрытых комиссий нет.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section divider-top" id="reviews">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow" data-reveal>Отзывы</p>
-          <h2 class="section-title" data-reveal>Нам доверяют</h2>
-          <p class="section-lead" data-reveal>
-            Истории клиентов, которые уже получили свои автомобили.
+        <article class="trust-card" data-reveal>
+          <div class="trust-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 9a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <path d="M3 9V7a2 2 0 0 1 2-2h11"/>
+              <circle cx="16.5" cy="13.5" r="1.2"/>
+            </svg>
+          </div>
+          <h3 class="trust-card__title">Можем привезти за свой счёт</h3>
+          <p class="trust-card__desc">
+            Не требуем полную предоплату вслепую: возможен вариант, когда мы выкупаем
+            автомобиль сами.
           </p>
-        </div>
+        </article>
 
-        <!-- Отзывы задаются массивом REVIEWS в начале app.js -->
-        <div class="carousel" id="reviewsCarousel" data-reveal>
-          <div class="carousel__viewport">
-            <div class="carousel__track"></div>
+        <article class="trust-card" data-reveal>
+          <div class="trust-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2.5" y="6.5" width="19" height="11" rx="2"/>
+              <path d="M6.5 10.5h11"/>
+              <path d="M6.5 13.5h7"/>
+            </svg>
           </div>
-          <div class="carousel__controls">
-            <button class="carousel__arrow carousel__arrow--prev" type="button" aria-label="Предыдущие отзывы">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M15 5l-7 7 7 7" />
-              </svg>
-            </button>
-            <div class="carousel__dots"></div>
-            <button class="carousel__arrow carousel__arrow--next" type="button" aria-label="Следующие отзывы">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+          <h3 class="trust-card__title">Под ключ на номерах РФ</h3>
+          <p class="trust-card__desc">
+            Автомобиль передаётся полностью оформленным и готовым к эксплуатации.
+          </p>
+        </article>
+
+        <article class="trust-card" data-reveal>
+          <div class="trust-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12.5 3H20v7.5l-8.8 8.8a1.5 1.5 0 0 1-2.1 0l-5.4-5.4a1.5 1.5 0 0 1 0-2.1z"/>
+              <circle cx="16.4" cy="7.6" r="1.3"/>
+            </svg>
           </div>
+          <h3 class="trust-card__title">Все платежи известны заранее</h3>
+          <p class="trust-card__desc">
+            Работаем по договору, полная стоимость фиксируется до начала сделки,
+            скрытых комиссий нет.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section divider-top" id="reviews">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal>Отзывы</p>
+        <h2 class="section-title" data-reveal>Нам доверяют</h2>
+        <p class="section-lead" data-reveal>
+          Истории клиентов, которые уже получили свои автомобили.
+        </p>
+      </div>
+
+      <!-- Отзывы задаются массивом REVIEWS в начале app.js -->
+      <div class="carousel" id="reviewsCarousel" data-reveal>
+        <div class="carousel__viewport">
+          <div class="carousel__track"></div>
+        </div>
+        <div class="carousel__controls">
+          <button class="carousel__arrow carousel__arrow--prev" type="button" aria-label="Предыдущие отзывы">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+          </button>
+          <div class="carousel__dots"></div>
+          <button class="carousel__arrow carousel__arrow--next" type="button" aria-label="Следующие отзывы">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+          </button>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section divider-top" id="office">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow" data-reveal>Офис</p>
-          <h2 class="section-title" data-reveal>Приезжайте к нам</h2>
+  <section class="section divider-top" id="request">
+    <div class="container">
+      <div class="request-grid">
+        <div class="request-info" data-reveal>
+          <div class="section-head">
+            <p class="eyebrow">Заявка</p>
+            <h2 class="section-title">Оставьте заявку</h2>
+          </div>
+          <p class="request-info__lead">
+            Расскажите, какой автомобиль ищете — рассчитаем итоговую стоимость
+            с доставкой и растаможкой и вернёмся с вариантами.
+          </p>
+          <div class="request-info__list">
+            <a href="tel:+79680734649">+7 (968) 073-46-49</a>
+            <a href="tel:+79688065099">+7 (968) 806-50-99</a>
+            <a href="tel:+79645313917">+7 (964) 531-39-17</a>
+            <a href="mailto:carz3zakaz@mail.ru">carz3zakaz@mail.ru</a>
+            <span class="is-muted">г. Подольск, ул. Правды, 34с1</span>
+          </div>
         </div>
 
-        <div class="contacts-grid">
-          <div data-reveal>
-            <p class="contacts__address">г. Подольск,<br>ул. Правды, 34с1</p>
-
-            <div class="rating">
-              <span class="rating__score">4,9</span>
-              <span class="rating__stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="1.5" stroke-linejoin="round">
-                  <path d="m12 3.5 2.7 5.5 6 .9-4.35 4.2 1.03 6-5.38-2.83L6.62 20.1l1.03-6L3.3 9.9l6-.9z" />
-                </svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                  stroke-linejoin="round">
-                  <path d="m12 3.5 2.7 5.5 6 .9-4.35 4.2 1.03 6-5.38-2.83L6.62 20.1l1.03-6L3.3 9.9l6-.9z" />
-                </svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                  stroke-linejoin="round">
-                  <path d="m12 3.5 2.7 5.5 6 .9-4.35 4.2 1.03 6-5.38-2.83L6.62 20.1l1.03-6L3.3 9.9l6-.9z" />
-                </svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                  stroke-linejoin="round">
-                  <path d="m12 3.5 2.7 5.5 6 .9-4.35 4.2 1.03 6-5.38-2.83L6.62 20.1l1.03-6L3.3 9.9l6-.9z" />
-                </svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                  stroke-linejoin="round">
-                  <path d="m12 3.5 2.7 5.5 6 .9-4.35 4.2 1.03 6-5.38-2.83L6.62 20.1l1.03-6L3.3 9.9l6-.9z" />
-                </svg></span>
-              <span class="rating__source">по данным Яндекс.Карт</span>
+        <div class="request-card" data-reveal>
+          <form id="requestForm" novalidate>
+            <div class="field">
+              <label class="form-label" for="reqName">Имя</label>
+              <input class="field__input" type="text" id="reqName" name="name"
+                     autocomplete="name" placeholder="Как к вам обращаться">
             </div>
 
-            <div class="contacts__list">
-              <a href="tel:+79680734649">+7 (968) 073-46-49</a>
-              <a href="tel:+79688065099">+7 (968) 806-50-99</a>
-              <a href="tel:+79645313917">+7 (964) 531-39-17</a>
+            <div class="field">
+              <label class="form-label" for="reqPhone">Телефон</label>
+              <div class="phone-field">
+                <button class="phone-code" type="button" data-country-toggle
+                        aria-expanded="false" aria-haspopup="listbox">
+                  <span class="phone-code__flag"></span>
+                  <span class="phone-code__dial">+7</span>
+                  <svg class="phone-code__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </button>
+                <input class="field__input" type="tel" id="reqPhone" name="phone"
+                       autocomplete="tel" placeholder="000 000-00-00">
+
+                <div class="country-panel" data-country-panel hidden>
+                  <div class="country-panel__search">
+                    <input type="text" placeholder="Поиск страны или кода" aria-label="Поиск страны">
+                  </div>
+                  <div class="country-panel__list" role="listbox"></div>
+                </div>
+              </div>
             </div>
 
-            <a href="https://yandex.com/maps/-/CTfReJPu" class="btn btn--gold" target="_blank"
-              rel="noopener noreferrer">Построить маршрут</a>
+            <div class="field">
+              <label class="form-label" for="reqEmail">Email <span class="is-muted">— необязательно</span></label>
+              <input class="field__input" type="email" id="reqEmail" name="email"
+                     autocomplete="email" placeholder="you@example.com">
+            </div>
+
+            <div class="field">
+              <label class="form-label" id="reqKindLabel">Какой автомобиль интересует</label>
+              <div class="custom-select" data-custom-select>
+                <button class="custom-select__toggle" type="button" data-select-toggle
+                        aria-expanded="false" aria-haspopup="listbox" aria-labelledby="reqKindLabel">
+                  <span class="custom-select__value" data-select-value>Из наличия</span>
+                  <svg class="custom-select__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </button>
+                <input type="hidden" id="reqKind" name="kind" value="Из наличия">
+
+                <div class="select-panel" data-select-panel role="listbox" hidden>
+                  <button class="select-row is-selected" type="button" role="option" aria-selected="true" data-value="Из наличия">Из наличия</button>
+                  <button class="select-row" type="button" role="option" aria-selected="false" data-value="Под заказ">Под заказ</button>
+                  <button class="select-row" type="button" role="option" aria-selected="false" data-value="Ещё не определился">Ещё не определился</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="form-label" for="reqComment">Комментарий <span class="is-muted">— необязательно</span></label>
+              <textarea class="field__area" id="reqComment" name="comment" rows="3"
+                        placeholder="Марка, модель, бюджет — или просто опишите, что ищете"></textarea>
+            </div>
+
+            <button class="btn btn--gold btn--full" type="submit">Отправить заявку</button>
+            <p class="form-note">Ответим в течение рабочего дня</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section divider-top" id="office">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal>Офис</p>
+        <h2 class="section-title" data-reveal>Приезжайте к нам</h2>
+      </div>
+
+      <div class="contacts-grid">
+        <div data-reveal>
+          <p class="contacts__address">г. Подольск,<br>ул. Правды, 34с1</p>
+
+          <div class="rating">
+            <span class="rating__score">4,9</span>
+            <span class="rating__stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="m12 3.5 2.7 5.5 6 .9-4.35 4.2 1.03 6-5.38-2.83L6.62 20.1l1.03-6L3.3 9.9l6-.9z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="m12 3.5 2.7 5.5 6 .9-4.35 4.2 1.03 6-5.38-2.83L6.62 20.1l1.03-6L3.3 9.9l6-.9z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="m12 3.5 2.7 5.5 6 .9-4.35 4.2 1.03 6-5.38-2.83L6.62 20.1l1.03-6L3.3 9.9l6-.9z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="m12 3.5 2.7 5.5 6 .9-4.35 4.2 1.03 6-5.38-2.83L6.62 20.1l1.03-6L3.3 9.9l6-.9z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="m12 3.5 2.7 5.5 6 .9-4.35 4.2 1.03 6-5.38-2.83L6.62 20.1l1.03-6L3.3 9.9l6-.9z"/></svg></span>
+            <span class="rating__source">по данным Яндекс.Карт</span>
           </div>
 
-          <div data-reveal>
-            <!-- Карта грузится только когда пользователь до неё доскроллит (loading="lazy").
+          <div class="contacts__list">
+            <a href="tel:+79680734649">+7 (968) 073-46-49</a>
+            <a href="tel:+79688065099">+7 (968) 806-50-99</a>
+            <a href="tel:+79645313917">+7 (964) 531-39-17</a>
+          </div>
+
+          <a href="https://yandex.com/maps/-/CTfReJPu" class="btn btn--gold" target="_blank" rel="noopener noreferrer">Построить маршрут</a>
+        </div>
+
+        <div data-reveal>
+          <!-- Карта грузится только когда пользователь до неё доскроллит (loading="lazy").
                Тёмный вид достигается CSS-фильтром в style.css (.map-frame iframe).
 
                Координаты офиса: 55.408046, 37.554124
@@ -532,14 +568,16 @@
                ЕСЛИ КАРТА ВСЁ РАВНО НЕ УСТРАИВАЕТ — удалите блок .map-frame
                целиком и раскомментируйте .map-static ниже: аккуратная
                статичная плашка без встроенной карты. -->
-            <div class="map-frame">
-              <iframe
-                src="https://yandex.ru/map-widget/v1/?ll=37.554124%2C55.408046&amp;z=17&amp;pt=37.554124%2C55.408046%2Cpm2rdm"
-                width="100%" height="100%" frameborder="0" loading="lazy"
-                title="CarZ3 на карте — Подольск, улица Правды, 34с1"></iframe>
-            </div>
+          <div class="map-frame">
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?ll=37.554124%2C55.408046&amp;z=17&amp;pt=37.554124%2C55.408046%2Cpm2rdm"
+              width="100%" height="100%"
+              frameborder="0"
+              loading="lazy"
+              title="CarZ3 на карте — Подольск, улица Правды, 34с1"></iframe>
+          </div>
 
-            <!--
+          <!--
           <div class="map-static">
             <div class="map-static__pin">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -551,109 +589,105 @@
             <a href="https://yandex.com/maps/-/CTfReJPu" class="btn btn--outline btn--sm" target="_blank" rel="noopener noreferrer">Открыть в Яндекс.Картах</a>
           </div>
           -->
-          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section divider-top" id="contacts">
-      <div class="container">
-        <div class="cta" data-reveal>
-          <h2 class="cta__title">Хотите узнать стоимость своего автомобиля?</h2>
-          <p class="cta__lead">
-            Расскажите, какую машину ищете, — рассчитаем итоговую цену с доставкой и растаможкой.
-          </p>
-          <div class="cta__actions">
-            <a href="https://wa.me/79680734649" class="btn btn--gold btn--lg" target="_blank"
-              rel="noopener noreferrer">Написать в WhatsApp</a>
-            <a href="https://t.me/CarZ3_Catalog_bot" class="btn btn--outline btn--lg" target="_blank"
-              rel="noopener noreferrer">Написать в Telegram</a>
-          </div>
-          <p class="cta__phone">
-            Или позвоните: <a href="tel:+79688065099">+7 (968) 806-50-99</a> ·
-            <a href="tel:+79645313917">+7 (964) 531-39-17</a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer divider-top">
+  <section class="section divider-top" id="contacts">
     <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <span class="logo">CarZ3</span>
-          <p class="footer__about">
-            Подбор и доставка автомобилей под заказ из Японии, США, Грузии, Кореи,
-            стран ЕС и Китая. Работаем по официальному договору.
-          </p>
+      <div class="cta" data-reveal>
+        <h2 class="cta__title">Хотите узнать стоимость своего автомобиля?</h2>
+        <p class="cta__lead">
+          Расскажите, какую машину ищете, — рассчитаем итоговую цену с доставкой и растаможкой.
+        </p>
+        <div class="cta__actions">
+          <a href="https://wa.me/79680734649" class="btn btn--gold btn--lg" target="_blank" rel="noopener noreferrer">Написать в WhatsApp</a>
+          <a href="https://t.me/CarZ3_Catalog_bot" class="btn btn--outline btn--lg" target="_blank" rel="noopener noreferrer">Написать в Telegram</a>
         </div>
+        <p class="cta__phone">
+          Или позвоните: <a href="tel:+79688065099">+7 (968) 806-50-99</a> ·
+          <a href="tel:+79645313917">+7 (964) 531-39-17</a>
+        </p>
+      </div>
+    </div>
+  </section>
 
-        <div>
-          <h3 class="footer__heading">Контакты</h3>
-          <div class="footer__list">
-            <a href="tel:+79680734649">+7 (968) 073-46-49</a>
-            <a href="tel:+79688065099">+7 (968) 806-50-99</a>
-            <a href="tel:+79645313917">+7 (964) 531-39-17</a>
-            <a href="mailto:carz3zakaz@mail.ru">carz3zakaz@mail.ru</a>
-            <span>г. Подольск, ул. Правды, 34с1</span>
-          </div>
-        </div>
+</main>
 
-        <div>
-          <h3 class="footer__heading">Мы в сети</h3>
-          <div class="footer__list">
-            <a href="https://t.me/carz3zakaz3" target="_blank" rel="noopener noreferrer">Telegram-канал</a>
-            <a href="https://wa.me/79680734649" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-            <a href="https://vk.com/carz3" target="_blank" rel="noopener noreferrer">ВКонтакте</a>
-            <a href="https://max.ru/join/vPvrdZpJVIAUYJp5-7tkf1LThWF6Cx9baZkv3ul__Uo" target="_blank"
-              rel="noopener noreferrer">Max</a>
-          </div>
+<footer class="footer divider-top">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="logo">CarZ3</span>
+        <p class="footer__about">
+          Подбор и доставка автомобилей под заказ из Японии, США, Грузии, Кореи,
+          стран ЕС и Китая. Работаем по официальному договору.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="footer__heading">Контакты</h3>
+        <div class="footer__list">
+          <a href="tel:+79680734649">+7 (968) 073-46-49</a>
+          <a href="tel:+79688065099">+7 (968) 806-50-99</a>
+          <a href="tel:+79645313917">+7 (964) 531-39-17</a>
+          <a href="mailto:carz3zakaz@mail.ru">carz3zakaz@mail.ru</a>
+          <span>г. Подольск, ул. Правды, 34с1</span>
         </div>
       </div>
 
-      <div class="footer__legal">
-        <p class="footer__disclaimer">
-          Обращаем ваше внимание на то, что данный сайт носит исключительно информационный
-          характер и ни при каких условиях не является публичной офертой, определяемой
-          положениями Статьи 437 (2) Гражданского кодекса Российской Федерации.
-        </p>
-        <dl class="footer__requisites">
-          <div>
-            <dt>Продавец</dt>
-            <dd>ИП Арнаут Наталья</dd>
-          </div>
-          <div>
-            <dt>ОГРНИП</dt>
-            <dd>324774600334688</dd>
-          </div>
-          <div>
-            <dt>ИНН</dt>
-            <dd>772417490010</dd>
-          </div>
-          <!-- РАСЧЁТНЫЙ СЧЁТ: обычно его печатают в договорах и счетах, а не в подвале сайта.
+      <div>
+        <h3 class="footer__heading">Мы в сети</h3>
+        <div class="footer__list">
+          <a href="https://t.me/+0afANDHpwCtlZDJi" target="_blank" rel="noopener noreferrer">Telegram-канал</a>
+          <a href="https://wa.me/79680734649" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="https://vk.com/carz3" target="_blank" rel="noopener noreferrer">ВКонтакте</a>
+          <a href="https://max.ru/join/vPvrdZpJVIAUYJp5-7tkf1LThWF6Cx9baZkv3ul__Uo" target="_blank" rel="noopener noreferrer">Max</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__legal">
+      <p class="footer__disclaimer">
+        Обращаем ваше внимание на то, что данный сайт носит исключительно информационный
+        характер и ни при каких условиях не является публичной офертой, определяемой
+        положениями Статьи 437 (2) Гражданского кодекса Российской Федерации.
+      </p>
+      <dl class="footer__requisites">
+        <div>
+          <dt>Продавец</dt>
+          <dd>ИП Арнаут Наталья</dd>
+        </div>
+        <div>
+          <dt>ОГРНИП</dt>
+          <dd>324774600334688</dd>
+        </div>
+        <div>
+          <dt>ИНН</dt>
+          <dd>772417490010</dd>
+        </div>
+        <!-- РАСЧЁТНЫЙ СЧЁТ: обычно его печатают в договорах и счетах, а не в подвале сайта.
              Если он вам здесь нужен — раскомментируйте блок ниже. -->
-          <!--
+        <!--
         <div>
           <dt>Расчётный счёт</dt>
           <dd>40802810302520005926</dd>
         </div>
         -->
-          <div>
-            <dt>Банк</dt>
-            <dd>АО «Альфа-Банк»</dd>
-          </div>
-        </dl>
-      </div>
-
-      <div class="footer__bottom">
-        <span>© <span id="year">2026</span> CarZ3. Все права защищены.</span>
-      </div>
+        <div>
+          <dt>Банк</dt>
+          <dd>АО «Альфа-Банк»</dd>
+        </div>
+      </dl>
     </div>
-  </footer>
 
-  <script src="app.js"></script>
+    <div class="footer__bottom">
+      <span>© <span id="year">2026</span> CarZ3. Все права защищены.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
 </body>
-
 </html>

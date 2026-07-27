@@ -1,216 +1,199 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Каталог автомобилей под заказ — CarZ3</title>
-  <meta name="description"
-    content="Каталог автомобилей CarZ3 под заказ из Японии, США, Грузии, Кореи, стран ЕС и Китая. Актуальное наличие, цены и характеристики, фильтр по направлениям поставки.">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Каталог автомобилей под заказ — CarZ3">
-  <meta property="og:description"
-    content="Актуальное наличие автомобилей из Японии, США, Грузии, Кореи, стран ЕС и Китая с ценами и характеристиками.">
-  <meta property="og:locale" content="ru_RU">
-  <meta property="og:site_name" content="CarZ3">
-  <!-- OG-КАРТИНКА: добавить og:image (1200×630) — нужна для превью при отправке ссылки -->
-  <meta name="theme-color" content="#0a0a0a">
-  <link rel="icon" href="images/favicon.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-
-  <!-- FAVICON И ПРЕВЬЮ ССЫЛКИ: см. подробный комментарий в index.html.
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Каталог автомобилей под заказ — CarZ3</title>
+<meta name="description" content="Каталог автомобилей CarZ3 под заказ из Японии, США, Грузии, Кореи, стран ЕС и Китая. Актуальное наличие, цены и характеристики, фильтр по направлениям поставки.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Каталог автомобилей под заказ — CarZ3">
+<meta property="og:description" content="Актуальное наличие автомобилей из Японии, США, Грузии, Кореи, стран ЕС и Китая с ценами и характеристиками.">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="CarZ3">
+<!-- OG-КАРТИНКА: добавить og:image (1200×630) — нужна для превью при отправке ссылки -->
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="data:,">
+<!-- FAVICON И ПРЕВЬЮ ССЫЛКИ: см. подробный комментарий в index.html.
      Раскомментировать одновременно с главной страницей, когда файлы появятся. -->
-  <!--
+<!--
 <link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <meta property="og:image" content="images/og-cover.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <header class="header">
-    <div class="container header__inner">
-      <a href="index.html" class="logo">CarZ3</a>
+<header class="header">
+  <div class="container header__inner">
+    <a href="index.html" class="logo">CarZ3</a>
 
-      <nav class="header__nav" aria-label="Основная навигация">
-        <a href="index.html">← На главную</a>
-        <a href="index.html#process">Как мы работаем</a>
-        <a href="index.html#geo">Логистика</a>
-        <a href="index.html#contacts">Контакты</a>
-      </nav>
-
-      <div class="header__actions">
-        <a href="https://wa.me/79680734649" class="btn btn--gold btn--sm" target="_blank"
-          rel="noopener noreferrer">Написать нам</a>
-      </div>
-
-      <a href="index.html" class="header__back">← На главную</a>
-
-      <button class="burger" type="button" data-burger aria-label="Открыть меню" aria-expanded="false"
-        aria-controls="mobileMenu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <div class="menu" id="mobileMenu" data-menu>
-    <nav class="menu__nav" aria-label="Мобильная навигация">
-      <a href="index.html">На главную</a>
+    <nav class="header__nav" aria-label="Основная навигация">
+      <a href="index.html">← На главную</a>
       <a href="index.html#process">Как мы работаем</a>
       <a href="index.html#geo">Логистика</a>
-      <a href="index.html#reviews">Отзывы</a>
       <a href="index.html#contacts">Контакты</a>
     </nav>
-    <div class="menu__foot">
-      <a href="tel:+79680734649" class="menu__phone">+7 (968) 073-46-49</a>
-      <a href="mailto:carz3zakaz@mail.ru" class="menu__mail">carz3zakaz@mail.ru</a>
-      <div class="menu__btns">
-        <a href="https://wa.me/79680734649" class="btn btn--outline btn--sm" target="_blank"
-          rel="noopener noreferrer">WhatsApp</a>
-        <a href="https://t.me/carz3zakaz3" class="btn btn--gold btn--sm" target="_blank"
-          rel="noopener noreferrer">Telegram</a>
-      </div>
+
+    <div class="header__actions">
+      <a href="https://wa.me/79680734649" class="btn btn--gold btn--sm" target="_blank" rel="noopener noreferrer">Написать нам</a>
+    </div>
+
+    <a href="index.html" class="header__back">← На главную</a>
+
+    <button class="burger" type="button" data-burger aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="menu" id="mobileMenu" data-menu>
+  <nav class="menu__nav" aria-label="Мобильная навигация">
+    <a href="index.html">На главную</a>
+    <a href="index.html#process">Как мы работаем</a>
+    <a href="index.html#geo">Логистика</a>
+    <a href="index.html#reviews">Отзывы</a>
+    <a href="index.html#contacts">Контакты</a>
+  </nav>
+  <div class="menu__foot">
+    <a href="tel:+79680734649" class="menu__phone">+7 (968) 073-46-49</a>
+    <a href="mailto:carz3zakaz@mail.ru" class="menu__mail">carz3zakaz@mail.ru</a>
+    <div class="menu__btns">
+      <a href="https://wa.me/79680734649" class="btn btn--outline btn--sm" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="https://t.me/+0afANDHpwCtlZDJi" class="btn btn--gold btn--sm" target="_blank" rel="noopener noreferrer">Telegram</a>
     </div>
   </div>
+</div>
 
-  <main>
+<main>
 
-    <section class="catalog-head">
-      <div class="container">
-        <p class="eyebrow" data-reveal>Наличие и заказ</p>
-        <h1 class="section-title" data-reveal>Каталог автомобилей</h1>
-        <p class="section-lead" data-reveal>
-          Актуальные предложения из Японии, США, Грузии, Кореи, стран ЕС и Китая. Цена указана с учётом условий,
-          которые мы зафиксируем в договоре.
-        </p>
-      </div>
-    </section>
-
-    <section class="section section--flush-top">
-      <div class="container">
-        <div class="filters" id="catalogFilters" role="group" aria-label="Фильтр по направлению"></div>
-        <p class="catalog-count" id="catalogCount" aria-live="polite"></p>
-
-        <div class="cards-grid" id="catalogGrid"></div>
-
-        <div class="catalog-note" data-reveal>
-          <p class="catalog-note__text">
-            Показаны <span id="catalogNoteCount">10</span> автомобилей из актуального наличия.
-            Полный список — в нашем Telegram-каталоге.
-          </p>
-          <a href="https://t.me/CarZ3_Catalog_bot" class="btn btn--gold" target="_blank"
-            rel="noopener noreferrer">Открыть полный каталог</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section divider-top">
-      <div class="container">
-        <div class="cta" data-reveal>
-          <h2 class="cta__title">Не нашли нужную модель?</h2>
-          <p class="cta__lead">
-            Подберём автомобиль под ваш запрос и бюджет на любом из трёх направлений.
-          </p>
-          <div class="cta__actions">
-            <a href="https://wa.me/79680734649" class="btn btn--gold btn--lg" target="_blank"
-              rel="noopener noreferrer">Написать в WhatsApp</a>
-            <a href="https://t.me/CarZ3_Catalog_bot" class="btn btn--outline btn--lg" target="_blank"
-              rel="noopener noreferrer">Написать в Telegram</a>
-          </div>
-          <p class="cta__phone">
-            Или позвоните: <a href="tel:+79688065099">+7 (968) 806-50-99</a> ·
-            <a href="tel:+79645313917">+7 (964) 531-39-17</a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer divider-top">
+  <section class="catalog-head">
     <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <span class="logo">CarZ3</span>
-          <p class="footer__about">
-            Подбор и доставка автомобилей под заказ из Японии, США, Грузии, Кореи,
-            стран ЕС и Китая. Работаем по официальному договору.
-          </p>
-        </div>
+      <p class="eyebrow" data-reveal>Наличие и заказ</p>
+      <h1 class="section-title" data-reveal>Каталог автомобилей</h1>
+      <p class="section-lead" data-reveal>
+        Актуальные предложения из Японии, США, Грузии, Кореи, стран ЕС и Китая. Цена указана с учётом условий,
+        которые мы зафиксируем в договоре.
+      </p>
+    </div>
+  </section>
 
-        <div>
-          <h3 class="footer__heading">Контакты</h3>
-          <div class="footer__list">
-            <a href="tel:+79680734649">+7 (968) 073-46-49</a>
-            <a href="tel:+79688065099">+7 (968) 806-50-99</a>
-            <a href="tel:+79645313917">+7 (964) 531-39-17</a>
-            <a href="mailto:carz3zakaz@mail.ru">carz3zakaz@mail.ru</a>
-            <span>г. Подольск, ул. Правды, 34с1</span>
-          </div>
-        </div>
+  <section class="section section--flush-top">
+    <div class="container">
+      <div class="filters" id="catalogFilters" role="group" aria-label="Фильтр по направлению"></div>
+      <p class="catalog-count" id="catalogCount" aria-live="polite"></p>
 
-        <div>
-          <h3 class="footer__heading">Мы в сети</h3>
-          <div class="footer__list">
-            <a href="https://t.me/carz3zakaz3" target="_blank" rel="noopener noreferrer">Telegram-канал</a>
-            <a href="https://wa.me/79680734649" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-            <a href="https://vk.com/carz3" target="_blank" rel="noopener noreferrer">ВКонтакте</a>
-            <a href="https://max.ru/join/vPvrdZpJVIAUYJp5-7tkf1LThWF6Cx9baZkv3ul__Uo" target="_blank"
-              rel="noopener noreferrer">Max</a>
-          </div>
+      <div class="cards-grid" id="catalogGrid"></div>
+
+      <div class="catalog-note" data-reveal>
+        <p class="catalog-note__text">
+          Показаны <span id="catalogNoteCount">10</span> автомобилей из актуального наличия.
+          Полный список — в нашем Telegram-каталоге.
+        </p>
+        <a href="https://t.me/CarZ3_Catalog_bot" class="btn btn--gold" target="_blank" rel="noopener noreferrer">Открыть полный каталог</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section divider-top">
+    <div class="container">
+      <div class="cta" data-reveal>
+        <h2 class="cta__title">Не нашли нужную модель?</h2>
+        <p class="cta__lead">
+          Подберём автомобиль под ваш запрос и бюджет на любом из трёх направлений.
+        </p>
+        <div class="cta__actions">
+          <a href="https://wa.me/79680734649" class="btn btn--gold btn--lg" target="_blank" rel="noopener noreferrer">Написать в WhatsApp</a>
+          <a href="https://t.me/CarZ3_Catalog_bot" class="btn btn--outline btn--lg" target="_blank" rel="noopener noreferrer">Написать в Telegram</a>
+        </div>
+        <p class="cta__phone">
+          Или позвоните: <a href="tel:+79688065099">+7 (968) 806-50-99</a> ·
+          <a href="tel:+79645313917">+7 (964) 531-39-17</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer divider-top">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="logo">CarZ3</span>
+        <p class="footer__about">
+          Подбор и доставка автомобилей под заказ из Японии, США, Грузии, Кореи,
+          стран ЕС и Китая. Работаем по официальному договору.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="footer__heading">Контакты</h3>
+        <div class="footer__list">
+          <a href="tel:+79680734649">+7 (968) 073-46-49</a>
+          <a href="tel:+79688065099">+7 (968) 806-50-99</a>
+          <a href="tel:+79645313917">+7 (964) 531-39-17</a>
+          <a href="mailto:carz3zakaz@mail.ru">carz3zakaz@mail.ru</a>
+          <span>г. Подольск, ул. Правды, 34с1</span>
         </div>
       </div>
 
-      <div class="footer__legal">
-        <p class="footer__disclaimer">
-          Обращаем ваше внимание на то, что данный сайт носит исключительно информационный
-          характер и ни при каких условиях не является публичной офертой, определяемой
-          положениями Статьи 437 (2) Гражданского кодекса Российской Федерации.
-        </p>
-        <dl class="footer__requisites">
-          <div>
-            <dt>Продавец</dt>
-            <dd>ИП Арнаут Наталья</dd>
-          </div>
-          <div>
-            <dt>ОГРНИП</dt>
-            <dd>324774600334688</dd>
-          </div>
-          <div>
-            <dt>ИНН</dt>
-            <dd>772417490010</dd>
-          </div>
-          <!-- РАСЧЁТНЫЙ СЧЁТ: обычно его печатают в договорах и счетах, а не в подвале сайта.
+      <div>
+        <h3 class="footer__heading">Мы в сети</h3>
+        <div class="footer__list">
+          <a href="https://t.me/+0afANDHpwCtlZDJi" target="_blank" rel="noopener noreferrer">Telegram-канал</a>
+          <a href="https://wa.me/79680734649" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="https://vk.com/carz3" target="_blank" rel="noopener noreferrer">ВКонтакте</a>
+          <a href="https://max.ru/join/vPvrdZpJVIAUYJp5-7tkf1LThWF6Cx9baZkv3ul__Uo" target="_blank" rel="noopener noreferrer">Max</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__legal">
+      <p class="footer__disclaimer">
+        Обращаем ваше внимание на то, что данный сайт носит исключительно информационный
+        характер и ни при каких условиях не является публичной офертой, определяемой
+        положениями Статьи 437 (2) Гражданского кодекса Российской Федерации.
+      </p>
+      <dl class="footer__requisites">
+        <div>
+          <dt>Продавец</dt>
+          <dd>ИП Арнаут Наталья</dd>
+        </div>
+        <div>
+          <dt>ОГРНИП</dt>
+          <dd>324774600334688</dd>
+        </div>
+        <div>
+          <dt>ИНН</dt>
+          <dd>772417490010</dd>
+        </div>
+        <!-- РАСЧЁТНЫЙ СЧЁТ: обычно его печатают в договорах и счетах, а не в подвале сайта.
              Если он вам здесь нужен — раскомментируйте блок ниже. -->
-          <!--
+        <!--
         <div>
           <dt>Расчётный счёт</dt>
           <dd>40802810302520005926</dd>
         </div>
         -->
-          <div>
-            <dt>Банк</dt>
-            <dd>АО «Альфа-Банк»</dd>
-          </div>
-        </dl>
-      </div>
-
-      <div class="footer__bottom">
-        <span>© <span id="year">2026</span> CarZ3. Все права защищены.</span>
-      </div>
+        <div>
+          <dt>Банк</dt>
+          <dd>АО «Альфа-Банк»</dd>
+        </div>
+      </dl>
     </div>
-  </footer>
 
-  <script src="app.js"></script>
+    <div class="footer__bottom">
+      <span>© <span id="year">2026</span> CarZ3. Все права защищены.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
 </body>
-
 </html>

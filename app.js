@@ -162,6 +162,252 @@
   // Фото клиентов — понадобятся на будущей странице обзоров.
   var CLIENT_PHOTOS = [];
 
+  /* ============================================================
+     4. СТРАНЫ ДЛЯ ВЫБОРА ТЕЛЕФОННОГО КОДА
+     ------------------------------------------------------------
+     Формат: 'ISO-код:Название:Телефонный код'
+
+     FLAG_MODE — как рисовать флаги:
+       'emoji'  — флаг-символ, без единого запроса и файла.
+                  Идеально на телефонах (iOS/Android) и на Mac.
+                  ВАЖНО: Windows такие символы не рисует и показывает
+                  вместо флага две буквы кода страны — это особенность
+                  системы, а не ошибка вёрстки.
+       'images' — картинки с flagcdn.com: флаги видно везде, включая
+                  Windows, но нужен интернет (по запросу на флаг).
+     ============================================================ */
+
+  var FLAG_MODE = 'images';
+  var DEFAULT_COUNTRY = 'RU';
+
+  var COUNTRIES_RAW = [
+    'AU:Австралия:61',
+    'AT:Австрия:43',
+    'AZ:Азербайджан:994',
+    'AL:Албания:355',
+    'DZ:Алжир:213',
+    'AO:Ангола:244',
+    'AD:Андорра:376',
+    'AG:Антигуа и Барбуда:1268',
+    'AR:Аргентина:54',
+    'AM:Армения:374',
+    'AF:Афганистан:93',
+    'BS:Багамы:1242',
+    'BD:Бангладеш:880',
+    'BB:Барбадос:1246',
+    'BH:Бахрейн:973',
+    'BY:Беларусь:375',
+    'BZ:Белиз:501',
+    'BE:Бельгия:32',
+    'BJ:Бенин:229',
+    'BG:Болгария:359',
+    'BO:Боливия:591',
+    'BA:Босния и Герцеговина:387',
+    'BW:Ботсвана:267',
+    'BR:Бразилия:55',
+    'BN:Бруней:673',
+    'BF:Буркина-Фасо:226',
+    'BI:Бурунди:257',
+    'BT:Бутан:975',
+    'VU:Вануату:678',
+    'VA:Ватикан:39',
+    'GB:Великобритания:44',
+    'HU:Венгрия:36',
+    'VE:Венесуэла:58',
+    'TL:Восточный Тимор:670',
+    'VN:Вьетнам:84',
+    'GA:Габон:241',
+    'HT:Гаити:509',
+    'GY:Гайана:592',
+    'GM:Гамбия:220',
+    'GH:Гана:233',
+    'GP:Гваделупа:590',
+    'GT:Гватемала:502',
+    'GN:Гвинея:224',
+    'GW:Гвинея-Бисау:245',
+    'DE:Германия:49',
+    'HN:Гондурас:504',
+    'HK:Гонконг:852',
+    'GD:Гренада:1473',
+    'GR:Греция:30',
+    'GE:Грузия:995',
+    'DK:Дания:45',
+    'CD:Демократическая Республика Конго:243',
+    'DJ:Джибути:253',
+    'DM:Доминика:1767',
+    'DO:Доминиканская Республика:1809',
+    'EG:Египет:20',
+    'ZM:Замбия:260',
+    'ZW:Зимбабве:263',
+    'IL:Израиль:972',
+    'IN:Индия:91',
+    'ID:Индонезия:62',
+    'JO:Иордания:962',
+    'IQ:Ирак:964',
+    'IR:Иран:98',
+    'IE:Ирландия:353',
+    'IS:Исландия:354',
+    'ES:Испания:34',
+    'IT:Италия:39',
+    'YE:Йемен:967',
+    'CV:Кабо-Верде:238',
+    'KZ:Казахстан:7',
+    'KY:Каймановы острова:1345',
+    'KH:Камбоджа:855',
+    'CM:Камерун:237',
+    'CA:Канада:1',
+    'QA:Катар:974',
+    'KE:Кения:254',
+    'CY:Кипр:357',
+    'KG:Киргизия:996',
+    'KI:Кирибати:686',
+    'CN:Китай:86',
+    'KP:КНДР:850',
+    'CO:Колумбия:57',
+    'KM:Коморы:269',
+    'CG:Конго:242',
+    'XK:Косово:383',
+    'CR:Коста-Рика:506',
+    'CI:Кот-д’Ивуар:225',
+    'CU:Куба:53',
+    'KW:Кувейт:965',
+    'LA:Лаос:856',
+    'LV:Латвия:371',
+    'LS:Лесото:266',
+    'LR:Либерия:231',
+    'LB:Ливан:961',
+    'LY:Ливия:218',
+    'LT:Литва:370',
+    'LI:Лихтенштейн:423',
+    'LU:Люксембург:352',
+    'MU:Маврикий:230',
+    'MR:Мавритания:222',
+    'MG:Мадагаскар:261',
+    'MO:Макао:853',
+    'MW:Малави:265',
+    'MY:Малайзия:60',
+    'ML:Мали:223',
+    'MV:Мальдивы:960',
+    'MT:Мальта:356',
+    'MA:Марокко:212',
+    'MH:Маршалловы Острова:692',
+    'MX:Мексика:52',
+    'FM:Микронезия:691',
+    'MZ:Мозамбик:258',
+    'MD:Молдова:373',
+    'MC:Монако:377',
+    'MN:Монголия:976',
+    'MM:Мьянма:95',
+    'NA:Намибия:264',
+    'NR:Науру:674',
+    'NP:Непал:977',
+    'NE:Нигер:227',
+    'NG:Нигерия:234',
+    'BQ:Нидерландские Карибы:599',
+    'NL:Нидерланды:31',
+    'NI:Никарагуа:505',
+    'NU:Ниуэ:683',
+    'NZ:Новая Зеландия:64',
+    'NC:Новая Каледония:687',
+    'NO:Норвегия:47',
+    'AE:ОАЭ:971',
+    'OM:Оман:968',
+    'CK:Острова Кука:682',
+    'PK:Пакистан:92',
+    'PW:Палау:680',
+    'PS:Палестина:970',
+    'PA:Панама:507',
+    'PG:Папуа — Новая Гвинея:675',
+    'PY:Парагвай:595',
+    'PE:Перу:51',
+    'PL:Польша:48',
+    'PT:Португалия:351',
+    'KR:Республика Корея:82',
+    'RU:Россия:7',
+    'RW:Руанда:250',
+    'RO:Румыния:40',
+    'SV:Сальвадор:503',
+    'WS:Самоа:685',
+    'SM:Сан-Марино:378',
+    'ST:Сан-Томе и Принсипи:239',
+    'SA:Саудовская Аравия:966',
+    'MK:Северная Македония:389',
+    'SC:Сейшелы:248',
+    'SN:Сенегал:221',
+    'VC:Сент-Винсент и Гренадины:1784',
+    'KN:Сент-Китс и Невис:1869',
+    'LC:Сент-Люсия:1758',
+    'RS:Сербия:381',
+    'SG:Сингапур:65',
+    'SY:Сирия:963',
+    'SK:Словакия:421',
+    'SI:Словения:386',
+    'SB:Соломоновы Острова:677',
+    'SO:Сомали:252',
+    'SD:Судан:249',
+    'SR:Суринам:597',
+    'US:США:1',
+    'SL:Сьерра-Леоне:232',
+    'TJ:Таджикистан:992',
+    'TH:Таиланд:66',
+    'TW:Тайвань:886',
+    'TZ:Танзания:255',
+    'TG:Того:228',
+    'TO:Тонга:676',
+    'TT:Тринидад и Тобаго:1868',
+    'TV:Тувалу:688',
+    'TN:Тунис:216',
+    'TM:Туркмения:993',
+    'TR:Турция:90',
+    'UG:Уганда:256',
+    'UZ:Узбекистан:998',
+    'UA:Украина:380',
+    'UY:Уругвай:598',
+    'FJ:Фиджи:679',
+    'PH:Филиппины:63',
+    'FI:Финляндия:358',
+    'FR:Франция:33',
+    'HR:Хорватия:385',
+    'CF:ЦАР:236',
+    'TD:Чад:235',
+    'ME:Черногория:382',
+    'CZ:Чехия:420',
+    'CL:Чили:56',
+    'CH:Швейцария:41',
+    'SE:Швеция:46',
+    'LK:Шри-Ланка:94',
+    'EC:Эквадор:593',
+    'GQ:Экваториальная Гвинея:240',
+    'ER:Эритрея:291',
+    'SZ:Эсватини:268',
+    'EE:Эстония:372',
+    'ET:Эфиопия:251',
+    'ZA:ЮАР:27',
+    'SS:Южный Судан:211',
+    'JM:Ямайка:1876',
+    'JP:Япония:81',
+  ];
+
+  var COUNTRIES = COUNTRIES_RAW.map(function (row) {
+    var p = row.split(':');
+    return { iso: p[0], name: p[1], dial: p[2] };
+  });
+
+  // Флаг-символ собирается из кода страны: A→\uD83C\uDDE6 и так далее.
+  function flagEmoji(iso) {
+    return iso.toUpperCase().replace(/./g, function (ch) {
+      return String.fromCodePoint(127397 + ch.charCodeAt(0));
+    });
+  }
+
+  function flagHtml(iso) {
+    if (FLAG_MODE === 'images') {
+      return '<img class="flag-img" src="https://flagcdn.com/w40/' + iso.toLowerCase() +
+        '.png" alt="" width="20" height="15" loading="lazy" decoding="async">';
+    }
+    return '<span class="flag-emoji">' + flagEmoji(iso) + '</span>';
+  }
+
   var BOT_URL = 'https://t.me/CarZ3_Catalog_bot';
   var HOME_LIMIT = 6;      // карточек на главной
   var CATALOG_LIMIT = 10;  // максимум на странице каталога
@@ -450,35 +696,8 @@
   /* ---------- Лайтбокс (общий: карточки машин, позже — страница обзоров) ---------- */
 
   function createLightbox() {
-    var box = null, boxImg = null, caption = null, zoomHint = null;
+    var box = null, boxImg = null, caption = null;
     var items = [], current = 0, lastFocus = null;
-
-    // Зум
-    var scale = 1, minScale = 1, maxScale = 4;
-    var originX = 0, originY = 0;
-    var panX = 0, panY = 0;
-    var isPanning = false, panStartX = 0, panStartY = 0, panStartPanX = 0, panStartPanY = 0;
-    var lastTap = 0;
-    var pinchStartDist = 0, pinchStartScale = 1;
-
-    function applyTransform() {
-      boxImg.style.transform = 'scale(' + scale + ') translate(' + panX / scale + 'px, ' + panY / scale + 'px)';
-      boxImg.style.cursor = scale > 1 ? 'grab' : 'zoom-in';
-    }
-
-    function resetZoom() {
-      scale = 1; panX = 0; panY = 0;
-      boxImg.style.transition = 'transform .25s ease';
-      applyTransform();
-      setTimeout(function () { boxImg.style.transition = ''; }, 260);
-    }
-
-    function clampPan() {
-      var maxPx = (boxImg.offsetWidth * (scale - 1)) / 2;
-      var maxPy = (boxImg.offsetHeight * (scale - 1)) / 2;
-      panX = Math.max(-maxPx, Math.min(maxPx, panX));
-      panY = Math.max(-maxPy, Math.min(maxPy, panY));
-    }
 
     function build() {
       box = document.createElement('div');
@@ -494,145 +713,30 @@
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>' +
         '</button>' +
         '<figure class="lightbox__figure">' +
-        '<img class="lightbox__img" src="" alt="" draggable="false">' +
+        '<img class="lightbox__img" src="" alt="">' +
         '<figcaption class="lightbox__caption"></figcaption>' +
         '</figure>' +
         '<button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Следующее фото">' +
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>' +
-        '</button>' +
-        '<span class="lightbox__zoom-hint">Колесо мыши или двойной клик — зум</span>';
+        '</button>';
       document.body.appendChild(box);
 
       boxImg = box.querySelector('.lightbox__img');
       caption = box.querySelector('.lightbox__caption');
-      zoomHint = box.querySelector('.lightbox__zoom-hint');
 
       box.querySelector('.lightbox__close').addEventListener('click', close);
-      box.querySelector('.lightbox__nav--prev').addEventListener('click', function () { if (scale > 1) { resetZoom(); setTimeout(function () { go(-1); }, 260); } else { go(-1); } });
-      box.querySelector('.lightbox__nav--next').addEventListener('click', function () { if (scale > 1) { resetZoom(); setTimeout(function () { go(1); }, 260); } else { go(1); } });
-
-      // Клик по фону закрывает
+      box.querySelector('.lightbox__nav--prev').addEventListener('click', function () { go(-1); });
+      box.querySelector('.lightbox__nav--next').addEventListener('click', function () { go(1); });
       box.addEventListener('click', function (e) {
-        if (e.target === box) close();
+        if (e.target === box || e.target.classList.contains('lightbox__figure')) close();
       });
-
-      // Колесо мыши — зум
-      box.addEventListener('wheel', function (e) {
-        e.preventDefault();
-        var delta = e.deltaY < 0 ? 1.15 : 0.88;
-        var rect = boxImg.getBoundingClientRect();
-        originX = e.clientX - rect.left - rect.width / 2;
-        originY = e.clientY - rect.top - rect.height / 2;
-        var newScale = Math.max(minScale, Math.min(maxScale, scale * delta));
-        if (newScale !== scale) {
-          panX += originX * (1 - newScale / scale);
-          panY += originY * (1 - newScale / scale);
-          scale = newScale;
-          if (scale <= 1) { scale = 1; panX = 0; panY = 0; }
-          clampPan();
-          applyTransform();
-        }
-      }, { passive: false });
-
-      // Двойной клик — зум x2 / сброс
-      boxImg.addEventListener('dblclick', function (e) {
-        if (scale > 1) {
-          resetZoom();
-        } else {
-          var rect = boxImg.getBoundingClientRect();
-          panX = -(e.clientX - rect.left - rect.width / 2);
-          panY = -(e.clientY - rect.top - rect.height / 2);
-          scale = 2.5;
-          clampPan();
-          boxImg.style.transition = 'transform .3s ease';
-          applyTransform();
-          setTimeout(function () { boxImg.style.transition = ''; }, 320);
-        }
-      });
-
-      // Перетаскивание мышью при зуме
-      boxImg.addEventListener('mousedown', function (e) {
-        if (scale <= 1) return;
-        e.preventDefault();
-        isPanning = true;
-        panStartX = e.clientX - panX;
-        panStartY = e.clientY - panY;
-        boxImg.style.cursor = 'grabbing';
-      });
-      window.addEventListener('mousemove', function (e) {
-        if (!isPanning) return;
-        panX = e.clientX - panStartX;
-        panY = e.clientY - panStartY;
-        clampPan();
-        applyTransform();
-      });
-      window.addEventListener('mouseup', function () {
-        if (!isPanning) return;
-        isPanning = false;
-        boxImg.style.cursor = scale > 1 ? 'grab' : 'zoom-in';
-      });
-
-      // Тач: пинч + двойное нажатие
-      box.addEventListener('touchstart', function (e) {
-        if (e.touches.length === 2) {
-          e.preventDefault();
-          pinchStartDist = Math.hypot(
-            e.touches[1].clientX - e.touches[0].clientX,
-            e.touches[1].clientY - e.touches[0].clientY
-          );
-          pinchStartScale = scale;
-        } else if (e.touches.length === 1 && scale <= 1) {
-          // Двойное нажатие
-          var now = Date.now();
-          if (now - lastTap < 300) {
-            e.preventDefault();
-            scale = 2.5;
-            panX = 0; panY = 0;
-            boxImg.style.transition = 'transform .3s ease';
-            applyTransform();
-            setTimeout(function () { boxImg.style.transition = ''; }, 320);
-          }
-          lastTap = now;
-        } else if (e.touches.length === 1 && scale > 1) {
-          isPanning = true;
-          panStartX = e.touches[0].clientX - panX;
-          panStartY = e.touches[0].clientY - panY;
-        }
-      }, { passive: false });
-
-      box.addEventListener('touchmove', function (e) {
-        if (e.touches.length === 2) {
-          e.preventDefault();
-          var dist = Math.hypot(
-            e.touches[1].clientX - e.touches[0].clientX,
-            e.touches[1].clientY - e.touches[0].clientY
-          );
-          scale = Math.max(minScale, Math.min(maxScale, pinchStartScale * dist / pinchStartDist));
-          if (scale <= 1) { scale = 1; panX = 0; panY = 0; }
-          clampPan();
-          applyTransform();
-        } else if (e.touches.length === 1 && isPanning) {
-          e.preventDefault();
-          panX = e.touches[0].clientX - panStartX;
-          panY = e.touches[0].clientY - panStartY;
-          clampPan();
-          applyTransform();
-        }
-      }, { passive: false });
-
-      box.addEventListener('touchend', function (e) {
-        if (e.touches.length < 2) isPanning = false;
-      });
-
-      // Свайп для смены фото (только если не зумировано)
-      addSwipe(box, function () { if (scale <= 1) go(1); }, function () { if (scale <= 1) go(-1); });
+      addSwipe(box, function () { go(1); }, function () { go(-1); });
     }
 
     function show(i) {
       if (!items.length) return;
       current = (i + items.length) % items.length;
       var item = items[current];
-      resetZoom();
       boxImg.src = item.src;
       boxImg.alt = item.alt || '';
       var text = items.length > 1
@@ -646,16 +750,9 @@
     function go(step) { show(current + step); }
 
     function onKey(e) {
-      if (e.key === 'Escape') { if (scale > 1) resetZoom(); else close(); }
-      else if (e.key === 'ArrowLeft' && scale <= 1) go(-1);
-      else if (e.key === 'ArrowRight' && scale <= 1) go(1);
-      else if (e.key === '+' || e.key === '=') {
-        scale = Math.min(maxScale, scale * 1.3); clampPan(); applyTransform();
-      } else if (e.key === '-') {
-        scale = Math.max(minScale, scale / 1.3);
-        if (scale <= 1) { scale = 1; panX = 0; panY = 0; }
-        clampPan(); applyTransform();
-      }
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') go(-1);
+      else if (e.key === 'ArrowRight') go(1);
     }
 
     function open(list, index) {
@@ -672,9 +769,9 @@
 
     function close() {
       if (!box) return;
-      resetZoom();
       box.classList.remove('is-open');
       document.removeEventListener('keydown', onKey);
+      // Скролл может держать открытая карточка машины под лайтбоксом.
       if (!document.querySelector('.modal.is-open, .menu.is-open')) scrollLock(false);
       if (lastFocus && lastFocus.focus) lastFocus.focus();
     }
@@ -1113,6 +1210,294 @@
     start();
   }
 
+
+  /* ---------- Всплывающие уведомления ---------- */
+
+  var ICON_ERROR = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5"/><path d="M12 16.3v.2"/></svg>';
+  var ICON_OK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.3 12.2 2.6 2.6 4.8-5.2"/></svg>';
+
+  function toast(message, kind) {
+    var box = document.getElementById('toasts');
+    if (!box) {
+      box = document.createElement('div');
+      box.id = 'toasts';
+      box.className = 'toasts';
+      box.setAttribute('role', 'status');
+      box.setAttribute('aria-live', 'polite');
+      document.body.appendChild(box);
+    }
+
+    var el = document.createElement('div');
+    el.className = 'toast toast--' + (kind === 'ok' ? 'ok' : 'error');
+    el.innerHTML = '<span class="toast__icon">' + (kind === 'ok' ? ICON_OK : ICON_ERROR) +
+      '</span><span class="toast__text">' + esc(message) + '</span>';
+    box.appendChild(el);
+
+    // Показ на следующем кадре — иначе переход не запустится.
+    requestAnimationFrame(function () { el.classList.add('is-visible'); });
+
+    setTimeout(function () {
+      el.classList.remove('is-visible');
+      setTimeout(function () { el.remove(); }, 400);
+    }, 3500);
+  }
+
+  /* ---------- Выбор телефонного кода страны ---------- */
+
+  function setupCountryPicker(form) {
+    var toggle = form.querySelector('[data-country-toggle]');
+    var panel = form.querySelector('[data-country-panel]');
+    if (!toggle || !panel) return null;
+
+    var search = panel.querySelector('.country-panel__search input');
+    var listBox = panel.querySelector('.country-panel__list');
+    var flagBox = toggle.querySelector('.phone-code__flag');
+    var dialBox = toggle.querySelector('.phone-code__dial');
+
+    var current = COUNTRIES.filter(function (c) { return c.iso === DEFAULT_COUNTRY; })[0] || COUNTRIES[0];
+
+    function rowHtml(c) {
+      return '<button class="country-row" type="button" data-iso="' + c.iso + '">' +
+        '<span class="country-row__flag">' + flagHtml(c.iso) + '</span>' +
+        '<span class="country-row__name">' + esc(c.name) + '</span>' +
+        '<span class="country-row__dial">+' + esc(c.dial) + '</span>' +
+        '</button>';
+    }
+
+    function render(filter) {
+      var q = (filter || '').trim().toLowerCase();
+      var list = !q ? COUNTRIES : COUNTRIES.filter(function (c) {
+        return c.name.toLowerCase().indexOf(q) === 0 ||
+          c.name.toLowerCase().indexOf(' ' + q) > -1 ||
+          c.dial.indexOf(q.replace(/^\+/, '')) === 0 ||
+          c.iso.toLowerCase() === q;
+      });
+
+      listBox.innerHTML = list.length
+        ? list.map(rowHtml).join('')
+        : '<p class="country-panel__empty">Ничего не найдено</p>';
+    }
+
+    function paint() {
+      flagBox.innerHTML = flagHtml(current.iso);
+      dialBox.textContent = '+' + current.dial;
+      toggle.setAttribute('aria-label', 'Код страны: ' + current.name + ', +' + current.dial);
+    }
+
+    function open() {
+      render('');
+      panel.hidden = false;
+      toggle.setAttribute('aria-expanded', 'true');
+      requestAnimationFrame(function () {
+        panel.classList.add('is-open');
+        if (search && !isTouch) search.focus();
+      });
+    }
+
+    function close() {
+      panel.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      if (search) search.value = '';
+      setTimeout(function () { panel.hidden = true; }, 220);
+    }
+
+    function isOpen() { return !panel.hidden; }
+
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (isOpen()) close(); else open();
+    });
+
+    listBox.addEventListener('click', function (e) {
+      var row = e.target.closest('[data-iso]');
+      if (!row) return;
+      var iso = row.getAttribute('data-iso');
+      var found = COUNTRIES.filter(function (c) { return c.iso === iso; })[0];
+      if (found) { current = found; paint(); }
+      close();
+      var phone = form.elements['phone'];
+      if (phone) phone.focus();
+    });
+
+    if (search) {
+      search.addEventListener('input', function () { render(search.value); });
+      search.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { close(); toggle.focus(); }
+      });
+    }
+
+    // Клик мимо панели закрывает её.
+    document.addEventListener('click', function (e) {
+      if (!isOpen()) return;
+      if (!panel.contains(e.target) && e.target !== toggle) close();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && isOpen()) { close(); toggle.focus(); }
+    });
+
+    paint();
+
+    return {
+      dial: function () { return current.dial; },
+      name: function () { return current.name; }
+    };
+  }
+
+  /* ---------- Кастомный выбор варианта (Какой автомобиль интересует) ---------- */
+
+  function setupCustomSelect(form) {
+    var group = form.querySelector('[data-custom-select]');
+    if (!group) return;
+
+    var toggle = group.querySelector('[data-select-toggle]');
+    var panel = group.querySelector('[data-select-panel]');
+    var valSpan = group.querySelector('[data-select-value]');
+    var input = group.querySelector('input[name="kind"]');
+    var rows = group.querySelectorAll('.select-row');
+    if (!toggle || !panel) return;
+
+    function open() {
+      panel.hidden = false;
+      toggle.setAttribute('aria-expanded', 'true');
+      requestAnimationFrame(function () {
+        panel.classList.add('is-open');
+      });
+    }
+
+    function close() {
+      panel.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      setTimeout(function () { panel.hidden = true; }, 220);
+    }
+
+    function isOpen() { return !panel.hidden; }
+
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (isOpen()) close(); else open();
+    });
+
+    panel.addEventListener('click', function (e) {
+      var row = e.target.closest('.select-row');
+      if (!row) return;
+      var val = row.getAttribute('data-value');
+      if (input) input.value = val;
+      if (valSpan) valSpan.textContent = val;
+      rows.forEach(function (r) {
+        var isSel = (r === row);
+        r.classList.toggle('is-selected', isSel);
+        r.setAttribute('aria-selected', isSel ? 'true' : 'false');
+      });
+      close();
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!isOpen()) return;
+      if (!group.contains(e.target) && e.target !== toggle) close();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && isOpen()) { close(); toggle.focus(); }
+    });
+
+    form.addEventListener('reset', function () {
+      setTimeout(function () {
+        var defaultVal = 'Из наличия';
+        if (input) input.value = defaultVal;
+        if (valSpan) valSpan.textContent = defaultVal;
+        rows.forEach(function (r) {
+          var isSel = r.getAttribute('data-value') === defaultVal;
+          r.classList.toggle('is-selected', isSel);
+          r.setAttribute('aria-selected', isSel ? 'true' : 'false');
+        });
+      }, 10);
+    });
+  }
+
+  /* ---------- Форма заявки ---------- */
+
+  function setupRequestForm() {
+    var form = document.getElementById('requestForm');
+    if (!form) return;
+
+    var picker = setupCountryPicker(form);
+    setupCustomSelect(form);
+    var submit = form.querySelector('[type="submit"]');
+    var submitLabel = submit ? submit.textContent : '';
+    var busy = false;
+
+    function digitsOf(value) {
+      return String(value || '').replace(/\D/g, '');
+    }
+
+    function fail(message, fieldName) {
+      toast(message, 'error');
+      var field = form.elements[fieldName];
+      if (field && field.focus) field.focus();
+      return false;
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (busy) return;
+
+      var name = (form.elements['name'].value || '').trim();
+      var phone = (form.elements['phone'].value || '').trim();
+      var email = (form.elements['email'].value || '').trim();
+      var kind = (form.elements['kind'].value || '').trim();
+      var comment = (form.elements['comment'].value || '').trim();
+
+      if (!name) return fail('Укажите, как к вам обращаться', 'name');
+
+      // Считаем цифры кода страны и номера вместе — так проверка
+      // одинаково работает и для российских, и для зарубежных номеров.
+      var dial = picker ? picker.dial() : '';
+      var totalDigits = digitsOf(dial) + digitsOf(phone);
+      if (!digitsOf(phone)) return fail('Укажите номер телефона', 'phone');
+      if (totalDigits.length < 10) return fail('Похоже, номер введён не полностью', 'phone');
+
+      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+        return fail('Проверьте адрес электронной почты', 'email');
+      }
+
+      var payload = {
+        name: name,
+        phone: '+' + digitsOf(dial) + ' ' + phone,
+        country: picker ? picker.name() : '',
+        email: email,
+        kind: kind,
+        comment: comment
+      };
+
+      // ОТПРАВКА ЗАЯВКИ: подключить приёмник (Formspree / Getform / собственный
+      // эндпоинт) — заменить блок ниже на fetch с реальным адресом.
+      // Пример:
+      // fetch('https://formspree.io/f/ВАШ_ID', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify(payload)
+      // }).then(...).catch(...);
+      if (window.console && console.info) console.info('Заявка (демо, не отправлена):', payload);
+
+      busy = true;
+      if (submit) {
+        submit.textContent = 'Заявка отправлена';
+        submit.disabled = true;
+      }
+      toast('Спасибо, ' + name + '! Свяжемся с вами в ближайшее время', 'ok');
+
+      setTimeout(function () {
+        form.reset();
+        if (submit) {
+          submit.textContent = submitLabel;
+          submit.disabled = false;
+        }
+        busy = false;
+      }, 4500);
+    });
+  }
+
   /* ---------- Запуск ---------- */
 
   function init() {
@@ -1123,6 +1508,7 @@
     setupTimeline();
     setupProcessPanel();
     setupReviewsCarousel();
+    setupRequestForm();
     initHomeCars();
     initCatalogPage();
     revealPageBlocks();
