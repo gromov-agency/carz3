@@ -696,8 +696,35 @@
   /* ---------- Лайтбокс (общий: карточки машин, позже — страница обзоров) ---------- */
 
   function createLightbox() {
-    var box = null, boxImg = null, caption = null;
+    var box = null, boxImg = null, caption = null, zoomHint = null;
     var items = [], current = 0, lastFocus = null;
+
+    // Зум
+    var scale = 1, minScale = 1, maxScale = 4;
+    var originX = 0, originY = 0;
+    var panX = 0, panY = 0;
+    var isPanning = false, panStartX = 0, panStartY = 0;
+    var lastTap = 0;
+    var pinchStartDist = 0, pinchStartScale = 1;
+
+    function applyTransform() {
+      boxImg.style.transform = 'scale(' + scale + ') translate(' + panX / scale + 'px, ' + panY / scale + 'px)';
+      boxImg.style.cursor = scale > 1 ? 'grab' : 'zoom-in';
+    }
+
+    function resetZoom() {
+      scale = 1; panX = 0; panY = 0;
+      boxImg.style.transition = 'transform .25s ease';
+      applyTransform();
+      setTimeout(function () { boxImg.style.transition = ''; }, 260);
+    }
+
+    function clampPan() {
+      var maxPx = (boxImg.offsetWidth * (scale - 1)) / 2;
+      var maxPy = (boxImg.offsetHeight * (scale - 1)) / 2;
+      panX = Math.max(-maxPx, Math.min(maxPx, panX));
+      panY = Math.max(-maxPy, Math.min(maxPy, panY));
+    }
 
     function build() {
       box = document.createElement('div');
@@ -713,30 +740,138 @@
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>' +
         '</button>' +
         '<figure class="lightbox__figure">' +
-        '<img class="lightbox__img" src="" alt="">' +
+        '<img class="lightbox__img" src="" alt="" draggable="false">' +
         '<figcaption class="lightbox__caption"></figcaption>' +
         '</figure>' +
         '<button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Следующее фото">' +
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>' +
-        '</button>';
+        '</button>' +
+        '<span class="lightbox__zoom-hint">Колесо мыши или двойной клик — зум</span>';
       document.body.appendChild(box);
 
       boxImg = box.querySelector('.lightbox__img');
       caption = box.querySelector('.lightbox__caption');
+      zoomHint = box.querySelector('.lightbox__zoom-hint');
 
       box.querySelector('.lightbox__close').addEventListener('click', close);
-      box.querySelector('.lightbox__nav--prev').addEventListener('click', function () { go(-1); });
-      box.querySelector('.lightbox__nav--next').addEventListener('click', function () { go(1); });
+      box.querySelector('.lightbox__nav--prev').addEventListener('click', function () { if (scale > 1) { resetZoom(); setTimeout(function () { go(-1); }, 260); } else { go(-1); } });
+      box.querySelector('.lightbox__nav--next').addEventListener('click', function () { if (scale > 1) { resetZoom(); setTimeout(function () { go(1); }, 260); } else { go(1); } });
+
       box.addEventListener('click', function (e) {
-        if (e.target === box || e.target.classList.contains('lightbox__figure')) close();
+        if (e.target === box) close();
       });
-      addSwipe(box, function () { go(1); }, function () { go(-1); });
+
+      box.addEventListener('wheel', function (e) {
+        e.preventDefault();
+        var delta = e.deltaY < 0 ? 1.15 : 0.88;
+        var rect = boxImg.getBoundingClientRect();
+        originX = e.clientX - rect.left - rect.width / 2;
+        originY = e.clientY - rect.top - rect.height / 2;
+        var newScale = Math.max(minScale, Math.min(maxScale, scale * delta));
+        if (newScale !== scale) {
+          panX += originX * (1 - newScale / scale);
+          panY += originY * (1 - newScale / scale);
+          scale = newScale;
+          if (scale <= 1) { scale = 1; panX = 0; panY = 0; }
+          clampPan();
+          applyTransform();
+        }
+      }, { passive: false });
+
+      boxImg.addEventListener('dblclick', function (e) {
+        if (scale > 1) {
+          resetZoom();
+        } else {
+          var rect = boxImg.getBoundingClientRect();
+          panX = -(e.clientX - rect.left - rect.width / 2);
+          panY = -(e.clientY - rect.top - rect.height / 2);
+          scale = 2.5;
+          clampPan();
+          boxImg.style.transition = 'transform .3s ease';
+          applyTransform();
+          setTimeout(function () { boxImg.style.transition = ''; }, 320);
+        }
+      });
+
+      boxImg.addEventListener('mousedown', function (e) {
+        if (scale <= 1) return;
+        e.preventDefault();
+        isPanning = true;
+        panStartX = e.clientX - panX;
+        panStartY = e.clientY - panY;
+        boxImg.style.cursor = 'grabbing';
+      });
+      window.addEventListener('mousemove', function (e) {
+        if (!isPanning) return;
+        panX = e.clientX - panStartX;
+        panY = e.clientY - panStartY;
+        clampPan();
+        applyTransform();
+      });
+      window.addEventListener('mouseup', function () {
+        if (!isPanning) return;
+        isPanning = false;
+        boxImg.style.cursor = scale > 1 ? 'grab' : 'zoom-in';
+      });
+
+      box.addEventListener('touchstart', function (e) {
+        if (e.touches.length === 2) {
+          e.preventDefault();
+          pinchStartDist = Math.hypot(
+            e.touches[1].clientX - e.touches[0].clientX,
+            e.touches[1].clientY - e.touches[0].clientY
+          );
+          pinchStartScale = scale;
+        } else if (e.touches.length === 1 && scale <= 1) {
+          var now = Date.now();
+          if (now - lastTap < 300) {
+            e.preventDefault();
+            scale = 2.5;
+            panX = 0; panY = 0;
+            boxImg.style.transition = 'transform .3s ease';
+            applyTransform();
+            setTimeout(function () { boxImg.style.transition = ''; }, 320);
+          }
+          lastTap = now;
+        } else if (e.touches.length === 1 && scale > 1) {
+          isPanning = true;
+          panStartX = e.touches[0].clientX - panX;
+          panStartY = e.touches[0].clientY - panY;
+        }
+      }, { passive: false });
+
+      box.addEventListener('touchmove', function (e) {
+        if (e.touches.length === 2) {
+          e.preventDefault();
+          var dist = Math.hypot(
+            e.touches[1].clientX - e.touches[0].clientX,
+            e.touches[1].clientY - e.touches[0].clientY
+          );
+          scale = Math.max(minScale, Math.min(maxScale, pinchStartScale * dist / pinchStartDist));
+          if (scale <= 1) { scale = 1; panX = 0; panY = 0; }
+          clampPan();
+          applyTransform();
+        } else if (e.touches.length === 1 && isPanning) {
+          e.preventDefault();
+          panX = e.touches[0].clientX - panStartX;
+          panY = e.touches[0].clientY - panStartY;
+          clampPan();
+          applyTransform();
+        }
+      }, { passive: false });
+
+      box.addEventListener('touchend', function (e) {
+        if (e.touches.length < 2) isPanning = false;
+      });
+
+      addSwipe(box, function () { if (scale <= 1) go(1); }, function () { if (scale <= 1) go(-1); });
     }
 
     function show(i) {
       if (!items.length) return;
       current = (i + items.length) % items.length;
       var item = items[current];
+      resetZoom();
       boxImg.src = item.src;
       boxImg.alt = item.alt || '';
       var text = items.length > 1
@@ -750,9 +885,16 @@
     function go(step) { show(current + step); }
 
     function onKey(e) {
-      if (e.key === 'Escape') close();
-      else if (e.key === 'ArrowLeft') go(-1);
-      else if (e.key === 'ArrowRight') go(1);
+      if (e.key === 'Escape') { if (scale > 1) resetZoom(); else close(); }
+      else if (e.key === 'ArrowLeft' && scale <= 1) go(-1);
+      else if (e.key === 'ArrowRight' && scale <= 1) go(1);
+      else if (e.key === '+' || e.key === '=') {
+        scale = Math.min(maxScale, scale * 1.3); clampPan(); applyTransform();
+      } else if (e.key === '-') {
+        scale = Math.max(minScale, scale / 1.3);
+        if (scale <= 1) { scale = 1; panX = 0; panY = 0; }
+        clampPan(); applyTransform();
+      }
     }
 
     function open(list, index) {
@@ -769,9 +911,9 @@
 
     function close() {
       if (!box) return;
+      resetZoom();
       box.classList.remove('is-open');
       document.removeEventListener('keydown', onKey);
-      // Скролл может держать открытая карточка машины под лайтбоксом.
       if (!document.querySelector('.modal.is-open, .menu.is-open')) scrollLock(false);
       if (lastFocus && lastFocus.focus) lastFocus.focus();
     }
@@ -835,7 +977,7 @@
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>' +
         '</button>' +
         '<div class="modal__gallery">' +
-        '<img class="modal__img" src="" alt="">' +
+        '<div class="modal__photos"></div>' +
         '<button class="modal__nav modal__nav--prev" type="button" aria-label="Предыдущее фото">' +
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>' +
         '</button>' +
@@ -851,13 +993,13 @@
         '<div class="modal__features"></div>' +
         '<p class="modal__price"></p>' +
         '<a class="btn btn--gold btn--full modal__cta" href="#" target="_blank" rel="noopener noreferrer">Написать менеджеру</a>' +
-        '<p class="modal__hint">Нажмите на фото, чтобы открыть его на весь экран</p>' +
+        '<p class="modal__hint">Нажмите на фото, чтобы открыть его на весь экран и увеличить</p>' +
         '</div>' +
         '</div>';
       document.body.appendChild(modal);
 
       els.dialog = modal.querySelector('.modal__dialog');
-      els.img = modal.querySelector('.modal__img');
+      els.photos = modal.querySelector('.modal__photos');
       els.counter = modal.querySelector('.modal__counter');
       els.status = modal.querySelector('.modal__status');
       els.title = modal.querySelector('.modal__title');
@@ -869,15 +1011,14 @@
       els.next = modal.querySelector('.modal__nav--next');
 
       modal.querySelector('.modal__close').addEventListener('click', close);
-      els.prev.addEventListener('click', function () { setPhoto(photoIndex - 1); });
-      els.next.addEventListener('click', function () { setPhoto(photoIndex + 1); });
-      els.img.addEventListener('click', function () {
-        if (!car) return;
-        lightbox.open(car.images.map(function (src) {
-          return { src: src, alt: carTitle(car) + ' ' + car.year };
+      els.prev.addEventListener('click', function (e) { e.stopPropagation(); setPhoto(photoIndex - 1); });
+      els.next.addEventListener('click', function (e) { e.stopPropagation(); setPhoto(photoIndex + 1); });
+      els.photos.addEventListener('click', function (e) {
+        if (!car || !e.target.classList.contains('modal__img')) return;
+        lightbox.open(car.images.map(function (src, idx) {
+          return { src: src, alt: carTitle(car) + ' ' + car.year + ' — фото ' + (idx + 1) };
         }), photoIndex);
       });
-      // Клик по затемнённому фону закрывает окно.
       modal.addEventListener('click', function (e) {
         if (e.target === modal) close();
       });
@@ -888,9 +1029,10 @@
 
     function setPhoto(i) {
       if (!car || !car.images.length) return;
+      var imgs = els.photos.querySelectorAll('.modal__img');
+      if (imgs.length) imgs[photoIndex].classList.remove('is-active');
       photoIndex = (i + car.images.length) % car.images.length;
-      els.img.src = car.images[photoIndex];
-      els.img.alt = carTitle(car) + ' ' + car.year + ' — фото ' + (photoIndex + 1);
+      if (imgs.length) imgs[photoIndex].classList.add('is-active');
       els.counter.textContent = (photoIndex + 1) + ' / ' + car.images.length;
       var many = car.images.length > 1;
       els.prev.hidden = !many;
@@ -933,15 +1075,12 @@
         : formatPrice(car);
 
       els.cta.href = managerLink(car);
-      setPhoto(0);
 
-      // Предзагрузка всех фото в фоне — чтобы свайп был мгновенным
-      if (car.images && car.images.length > 1) {
-        for (var pi = 1; pi < car.images.length; pi++) {
-          var preImg = new Image();
-          preImg.src = car.images[pi];
-        }
-      }
+      els.photos.innerHTML = car.images.map(function (src, idx) {
+        return '<img class="modal__img' + (idx === 0 ? ' is-active' : '') + '" src="' + esc(src) + '" alt="' + esc(carTitle(car) + ' ' + car.year + ' — фото ' + (idx + 1)) + '" draggable="false">';
+      }).join('');
+
+      setPhoto(0);
     }
 
     function onKey(e) {

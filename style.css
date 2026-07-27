@@ -1433,7 +1433,7 @@ button:focus-visible {
 .lightbox {
   position: fixed;
   inset: 0;
-  z-index: 500;
+  z-index: 1000;
   background: rgba(6, 6, 6, 0.95);
   display: flex;
   align-items: center;
@@ -1464,6 +1464,19 @@ button:focus-visible {
   max-height: 78vh;
   object-fit: contain;
   border-radius: 12px;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.lightbox__zoom-hint {
+  position: absolute;
+  bottom: 16px;
+  right: 20px;
+  font-size: 12px;
+  color: rgba(232, 232, 232, 0.5);
+  pointer-events: none;
+  letter-spacing: 0.03em;
+  z-index: 10;
 }
 
 .lightbox__caption {
@@ -1996,17 +2009,36 @@ button:focus-visible {
   overflow: hidden;
 }
 
+.modal__photos {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #0a0a0a;
+}
+
 .modal__img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
   background: #0a0a0a;
   cursor: zoom-in;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .22s ease-out;
+}
+
+.modal__img.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
 }
 
 .modal__nav {
   position: absolute;
   top: 50%;
+  z-index: 5;
   width: 44px;
   height: 44px;
   display: flex;
@@ -2042,6 +2074,7 @@ button:focus-visible {
   position: absolute;
   bottom: 12px;
   right: 12px;
+  z-index: 5;
   padding: 5px 12px;
   border-radius: 100px;
   border: 1px solid var(--gold-line);
@@ -2149,19 +2182,20 @@ button:focus-visible {
 
 @media (min-width: 900px) {
   .modal__dialog {
-    display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-    max-height: 88vh;
+    display: block;
+    max-width: 760px;
+    max-height: 90vh;
   }
 
   .modal__gallery {
-    aspect-ratio: auto;
-    height: 100%;
-    border-radius: 18px 0 0 18px;
+    aspect-ratio: 16 / 10;
+    width: 100%;
+    height: auto;
+    border-radius: 18px 18px 0 0;
   }
 
   .modal__body {
-    padding: 40px 36px;
+    padding: 36px 36px;
     overflow-y: auto;
   }
 
