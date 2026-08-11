@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -34,7 +34,6 @@
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap"></noscript>
 <!-- Critical CSS: первый экран без блокировки — body, header, hero, btn -->
@@ -1069,6 +1068,55 @@ h1,h2,h3{font-family:var(--font-heading);color:var(--text-heading);font-weight:7
   </a>
 </nav>
 
-<script src="app.js?v=20260811_01" defer></script>
+<script src="app.js?v=20260811_02" defer></script>
+
+<!-- Schema.org: структурированные данные для Google — адрес, рейтинг, телефон в выдаче -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoDealer",
+  "name": "CarZ3",
+  "description": "Автомобили под заказ из Кореи, Китая, ОАЭ, стран ЕС, США и Грузии. Официальный договор, прозрачная цена, полный контроль логистики.",
+  "url": "https://carz3.ru/",
+  "logo": "https://carz3.ru/images/favicon.png",
+  "telephone": ["+79680734649", "+79688065099", "+79645313917"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Правды, 34с1",
+    "addressLocality": "Подольск",
+    "addressRegion": "Московская область",
+    "postalCode": "142116",
+    "addressCountry": "RU"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 55.408046,
+    "longitude": 37.554124
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "25",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "09:00",
+      "closes": "21:00"
+    }
+  ],
+  "areaServed": {
+    "@type": "Country",
+    "name": "Россия"
+  },
+  "priceRange": "₽₽₽",
+  "sameAs": [
+    "https://yandex.com/maps/-/CTfReJPu"
+  ]
+}
+</script>
 </body>
 </html>
