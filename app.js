@@ -512,8 +512,8 @@
   }
   var BOT_URL = 'https://t.me/CarZ3_Catalog_bot';
   var FORM_ENDPOINT = '';
-  var HOME_LIMIT = 6;      // карточек на главной
-  var CATALOG_LIMIT = 10;  // максимум на странице каталога
+  var HOME_LIMIT = 6;      
+  var CATALOG_LIMIT = 10;  
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var isTouch = window.matchMedia('(hover: none)').matches;
   function esc(value) {
@@ -1196,7 +1196,7 @@
       var countries = {};
       shown.forEach(function (car) {
         var c = car.location || 'Другое';
-        if (c.toLowerCase() === 'бишкек') return; // Бишкек не пиши
+        if (c.toLowerCase() === 'бишкек') return; 
         countries[c] = true;
       });
       
@@ -1932,7 +1932,7 @@
     var backBtn = root.querySelector('.quiz__back');
     var answers = {};
     var step = 0;
-    var TOTAL = QUIZ_STEPS.length + 1; // + шаг с контактами
+    var TOTAL = QUIZ_STEPS.length + 1; 
     function progress() {
       var pct = Math.round((step / TOTAL) * 100);
       if (bar) bar.style.transform = 'scaleX(' + (pct / 100) + ')';

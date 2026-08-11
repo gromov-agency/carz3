@@ -20,9 +20,6 @@
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Шрифты грузятся не блокируя отрисовку: media="print" снимает
-     блокировку, onload возвращает стиль странице. Текст сначала покажется
-     системным шрифтом и подменится — это быстрее, чем ждать загрузки. -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Manrope:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="style.css?v=20260810_12">
 </head>
@@ -98,8 +95,6 @@
 
   <section class="section section--flush-top">
     <div class="container">
-      <!-- Карточки собираются из массива VIDEOS в app.js.
-           Видео грузится только по клику — превью не тянет за собой файл. -->
       <div class="videos" id="videoGrid"></div>
     </div>
   </section>
@@ -207,14 +202,6 @@
           <dt>ИНН</dt>
           <dd>772417490010</dd>
         </div>
-        <!-- РАСЧЁТНЫЙ СЧЁТ: обычно его печатают в договорах и счетах, а не в подвале сайта.
-             Если он вам здесь нужен — раскомментируйте блок ниже. -->
-        <!--
-        <div>
-          <dt>Расчётный счёт</dt>
-          <dd>40802810302520005926</dd>
-        </div>
-        -->
         <div>
           <dt>Банк</dt>
           <dd>АО «Альфа-Банк»</dd>
@@ -229,7 +216,6 @@
   </div>
 </footer>
 
-<!-- Липкая панель связи — появляется на телефоне после первого экрана -->
 <nav class="dock" data-dock aria-label="Быстрая связь">
   <a class="dock__btn" href="tel:+79680734649">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">

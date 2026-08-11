@@ -10,32 +10,15 @@
 <meta property="og:description" content="Автомобили под заказ из Кореи, Китая, ОАЭ, стран ЕС, США и Грузии. Официальный договор, полный контроль логистики.">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="CarZ3">
-<!-- OG-КАРТИНКА: добавить og:image (1200×630) — нужна для превью при отправке ссылки -->
 <link rel="canonical" href="https://carz3.ru/">
 <meta property="og:url" content="https://carz3.ru/">
 <meta name="theme-color" content="#0a0a0a">
 <link rel="icon" href="images/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
-<!-- FAVICON И ПРЕВЬЮ ССЫЛКИ: файлов пока нет в проекте.
-     Подготовьте из логотипа на тёмном фоне (квадратный кроп):
-       images/favicon-32.png       — 32×32
-       images/apple-touch-icon.png — 180×180
-       images/og-cover.jpg         — 1200×630, фото трёх автомобилей
-     Затем удалите строку <link rel="icon" href="data:,"> выше
-     и раскомментируйте четыре строки ниже.
-     Пока файлов нет — включать нельзя, браузер будет писать 404 в консоль. -->
-<!--
-<link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-<meta property="og:image" content="images/og-cover.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
--->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Manrope:wght@400;500;600;700&display=swap">
-<!-- Critical CSS: первый экран без блокировки — body, header, hero, btn -->
 <style>
 :root{--bg-page:#0a0a0a;--bg-card:#1a1a1a;--bg-card-alt:#141414;--gold:#C9A961;--gold-hover:#E4CD8E;--gold-soft:rgba(201,169,97,0.12);--gold-line:rgba(201,169,97,0.18);--gold-glow:rgba(201,169,97,0.22);--text-main:#e8e8e8;--text-heading:#fff;--text-muted:rgba(232,232,232,0.56);--text-faint:rgba(232,232,232,0.38);--danger:#c4564f;--font-heading:'Bricolage Grotesque',sans-serif;--font-body:'Manrope',sans-serif;--container:1240px;--header-h:74px;--shadow-rest:0 2px 14px rgba(0,0,0,0.32);--shadow-lift:0 20px 44px rgba(0,0,0,0.52)}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -77,12 +60,11 @@ h1,h2,h3{font-family:var(--font-heading);color:var(--text-heading);font-weight:7
 .btn--lg{padding:17px 34px;font-size:16px;min-height:56px}
 .btn--sm{padding:11px 20px;font-size:14px;min-height:44px}
 </style>
-<!-- Основные стили: загружаются асинхронно, не блокируют первую отрисовку -->
 <link rel="preload" as="style" href="style.css?v=20260811_01" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="stylesheet" href="style.css?v=20260811_01">
-<!-- Preload hero отдельно для мобилки и десктопа -->
 <link rel="preload" as="image" href="hero-mobile.webp" media="(max-width: 1023px)">
 <link rel="preload" as="image" href="hero.webp" media="(min-width: 1024px)">
+  <meta property="og:image" content="images/og-cover.jpg">
 </head>
 <body>
 
@@ -135,9 +117,6 @@ h1,h2,h3{font-family:var(--font-heading);color:var(--text-heading);font-weight:7
 <main>
 
   <section class="hero" id="about">
-    <!-- Настоящий <img>, а не CSS-фон: сканер предзагрузки находит адрес
-         прямо в HTML и начинает качать картинку ещё до загрузки стилей.
-         Это LCP-элемент страницы, поэтому fetchpriority="high". -->
     <div class="hero__bg" aria-hidden="true">
       <picture>
         <source media="(max-width: 1023px)" srcset="hero-mobile.webp">
@@ -198,8 +177,6 @@ h1,h2,h3{font-family:var(--font-heading);color:var(--text-heading);font-weight:7
             <strong>1000 клиентов</strong>.
           </p>
 
-          <!-- Раньше здесь шли три абзаца подряд. Те же факты, разбитые на
-               пары «утверждение → расшифровка»: читается по диагонали. -->
           <dl class="facts">
             <div class="fact">
               <dt class="fact__key">Не перекупщики</dt>
@@ -225,8 +202,6 @@ h1,h2,h3{font-family:var(--font-heading);color:var(--text-heading);font-weight:7
         </div>
 
         <div data-reveal>
-          <!-- ФОТО ПЛОЩАДКИ: если появится отдельный снимок офиса — заменить коллаж
-               одним фото: <div class="about__media"><img src="images/office.jpg" ...></div> -->
           <div class="about__collage">
             <img src="images/clients/tayron-1.webp" alt="Выдача автомобиля на площадке CarZ3 в Подольске" loading="lazy" decoding="async" width="600" height="450" onerror="this.closest('picture').remove()">
             <img src="images/clients/audi-q3-sunset.webp" alt="Клиентка CarZ3 получает Audi Q3" loading="lazy" decoding="async" width="600" height="450" onerror="this.closest('picture').remove()">
@@ -310,7 +285,6 @@ h1,h2,h3{font-family:var(--font-heading);color:var(--text-heading);font-weight:7
           </p>
         </div>
 
-        <!-- Шаги и логика — в функции setupQuiz() в app.js -->
         <div class="quiz" id="quiz" data-reveal>
           <div class="quiz__head">
             <span class="quiz__counter">Шаг 1 из 5</span>
@@ -442,9 +416,6 @@ h1,h2,h3{font-family:var(--font-heading);color:var(--text-heading);font-weight:7
                   <h3 class="step__title">Выдача автомобиля</h3>
                   <p class="step__desc">Передаём автомобиль вам вместе с полным пакетом документов — можно ставить на учёт.</p>
 
-                  <!-- Фото финального шага. На десктопе его показывает липкая
-                       панель справа (PROCESS_LAST_PHOTO в app.js), поэтому
-                       здесь оно скрыто и включается только на телефоне. -->
                   <div class="step__media">
                     <img src="images/clients/mercedes-a.jpg"
                            alt="Клиент CarZ3 получает автомобиль с полным пакетом документов"
@@ -557,8 +528,6 @@ h1,h2,h3{font-family:var(--font-heading);color:var(--text-heading);font-weight:7
           </p>
         </article>
 
-        <!-- ВАЖНО: формулировку этого пункта согласовать с клиентом до публикации.
-             Условие финансовое — важно не исказить смысл. -->
         <article class="trust-card" data-reveal>
           <div class="trust-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -681,7 +650,6 @@ h1,h2,h3{font-family:var(--font-heading);color:var(--text-heading);font-weight:7
         </p>
       </div>
 
-      <!-- Отзывы задаются массивом REVIEWS в начале app.js -->
       <div class="carousel" id="reviewsCarousel" data-reveal>
         <div class="carousel__viewport">
           <div class="carousel__track"></div>
@@ -710,7 +678,6 @@ h1,h2,h3{font-family:var(--font-heading);color:var(--text-heading);font-weight:7
         </p>
       </div>
 
-      <!-- Карточки собираются из массива YANDEX_REVIEWS в app.js -->
       <div class="ya-grid" id="yaReviews"></div>
 
       <div class="section-actions" data-reveal>
@@ -729,7 +696,6 @@ h1,h2,h3{font-family:var(--font-heading);color:var(--text-heading);font-weight:7
         </p>
       </div>
 
-      <!-- Плитки собираются из массива CLIENT_PHOTOS в app.js -->
       <div class="gallery gallery--mosaic" id="galleryGrid"></div>
 
       <div class="section-actions" data-reveal>
@@ -748,7 +714,6 @@ h1,h2,h3{font-family:var(--font-heading);color:var(--text-heading);font-weight:7
         </p>
       </div>
 
-      <!-- Вопросы собираются из массива FAQ в app.js -->
       <div class="faq" id="faqList"></div>
     </div>
   </section>
@@ -887,18 +852,6 @@ h1,h2,h3{font-family:var(--font-heading);color:var(--text-heading);font-weight:7
         </div>
 
         <div data-reveal>
-          <!-- Карта грузится только когда пользователь до неё доскроллит (loading="lazy").
-               Тёмный вид достигается CSS-фильтром в style.css (.map-frame iframe).
-
-               Координаты офиса: 55.408046, 37.554124
-               В адресе Яндекса порядок обратный — сначала долгота (ll и pt).
-               pt= ставит обычную метку. Раньше здесь был text= (поиск по адресу) —
-               именно он рисовал чип «1 найден», плашку с адресом и кнопки
-               «Организации в доме» / «Сообщить об ошибке». С pt их нет.
-
-               ЕСЛИ КАРТА ВСЁ РАВНО НЕ УСТРАИВАЕТ — удалите блок .map-frame
-               целиком и раскомментируйте .map-static ниже: аккуратная
-               статичная плашка без встроенной карты. -->
           <div class="map-frame">
             <iframe
               src="https://yandex.ru/map-widget/v1/?ll=37.554124%2C55.408046&amp;z=17&amp;pt=37.554124%2C55.408046%2Cpm2rdm"
@@ -907,27 +860,12 @@ h1,h2,h3{font-family:var(--font-heading);color:var(--text-heading);font-weight:7
               loading="lazy"
               title="CarZ3 на карте — Подольск, улица Правды, 34с1"></iframe>
 
-            <!-- Прозрачный щит поверх карты: без него палец на телефоне
-                 «проваливается» в карту и страница перестаёт скроллиться.
-                 Снимается одним нажатием — setupMapShield() в app.js. -->
             <button class="map-shield" type="button" data-map-shield>
               <span class="map-shield__hint">Нажмите, чтобы двигать карту</span>
             </button>
           </div>
 
-          <!--
-          <div class="map-static">
-            <div class="map-static__pin">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/>
-                <circle cx="12" cy="10" r="2.6"/>
-              </svg>
-            </div>
-            <p class="map-static__address">г. Подольск, ул. Правды, 34с1</p>
-            <a href="https://yandex.com/maps/-/CTfReJPu" class="btn btn--outline btn--sm" target="_blank" rel="noopener noreferrer">Открыть в Яндекс.Картах</a>
           </div>
-          -->
-        </div>
       </div>
     </div>
   </section>
@@ -1015,14 +953,6 @@ h1,h2,h3{font-family:var(--font-heading);color:var(--text-heading);font-weight:7
           <dt>ИНН</dt>
           <dd>772417490010</dd>
         </div>
-        <!-- РАСЧЁТНЫЙ СЧЁТ: обычно его печатают в договорах и счетах, а не в подвале сайта.
-             Если он вам здесь нужен — раскомментируйте блок ниже. -->
-        <!--
-        <div>
-          <dt>Расчётный счёт</dt>
-          <dd>40802810302520005926</dd>
-        </div>
-        -->
         <div>
           <dt>Банк</dt>
           <dd>АО «Альфа-Банк»</dd>
@@ -1037,7 +967,6 @@ h1,h2,h3{font-family:var(--font-heading);color:var(--text-heading);font-weight:7
   </div>
 </footer>
 
-<!-- Липкая панель связи — появляется на телефоне после первого экрана -->
 <nav class="dock" data-dock aria-label="Быстрая связь">
   <a class="dock__btn" href="tel:+79680734649">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -1068,7 +997,6 @@ h1,h2,h3{font-family:var(--font-heading);color:var(--text-heading);font-weight:7
 
 <script src="app.js?v=20260811_02" defer></script>
 
-<!-- Schema.org: структурированные данные для Google — адрес, рейтинг, телефон в выдаче -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
