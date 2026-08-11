@@ -1,16 +1,18 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CarZ3 — привезём ваш автомобиль под заказ из Японии, США, Кореи и других стран</title>
-<meta name="description" content="Подбираем и привозим автомобили под заказ из Японии, США, Грузии, Кореи, стран ЕС и Китая. Официальный договор, прозрачная цена на каждом этапе, полный контроль логистики от покупки до выдачи.">
+<title>CarZ3 — автомобили под заказ из Кореи, Китая и ОАЭ | 5 лет, 1000+ клиентов</title>
+<meta name="description" content="Подбираем и привозим автомобили под заказ из Кореи, Китая, ОАЭ, стран ЕС, США и Грузии. Официальный договор, прозрачная цена на каждом этапе, полный контроль логистики от покупки до выдачи.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="CarZ3 — привезём ваш автомобиль под заказ">
-<meta property="og:description" content="Автомобили под заказ из Японии, США, Грузии, Кореи, стран ЕС и Китая. Официальный договор, полный контроль логистики.">
+<meta property="og:description" content="Автомобили под заказ из Кореи, Китая, ОАЭ, стран ЕС, США и Грузии. Официальный договор, полный контроль логистики.">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="CarZ3">
 <!-- OG-КАРТИНКА: добавить og:image (1200×630) — нужна для превью при отправке ссылки -->
+<link rel="canonical" href="https://carz3.ru/">
+<meta property="og:url" content="https://carz3.ru/">
 <meta name="theme-color" content="#0a0a0a">
 <link rel="icon" href="images/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -32,8 +34,58 @@
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap"></noscript>
+<!-- Critical CSS: первый экран без блокировки — body, header, hero, btn -->
+<style>
+:root{--bg-page:#0a0a0a;--bg-card:#1a1a1a;--bg-card-alt:#141414;--gold:#C9A961;--gold-hover:#E4CD8E;--gold-soft:rgba(201,169,97,0.12);--gold-line:rgba(201,169,97,0.18);--gold-glow:rgba(201,169,97,0.22);--text-main:#e8e8e8;--text-heading:#fff;--text-muted:rgba(232,232,232,0.56);--text-faint:rgba(232,232,232,0.38);--danger:#c4564f;--font-heading:'Bricolage Grotesque',sans-serif;--font-body:'Manrope',sans-serif;--container:1240px;--header-h:74px;--shadow-rest:0 2px 14px rgba(0,0,0,0.32);--shadow-lift:0 20px 44px rgba(0,0,0,0.52)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg-page);color:var(--text-main);font-family:var(--font-body);font-size:16px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;background:none;border:none;cursor:pointer;color:inherit}
+svg{display:block}
+h1,h2,h3{font-family:var(--font-heading);color:var(--text-heading);font-weight:700;line-height:1.12;letter-spacing:-0.02em}
+.container{width:100%;max-width:var(--container);margin:0 auto;padding:0 20px}
+@media(min-width:768px){.container{padding:0 40px}}
+.header{position:sticky;top:0;z-index:400;background:var(--bg-page);border-bottom:1px solid var(--gold-line)}
+.header__inner{display:flex;align-items:center;justify-content:space-between;gap:16px;height:var(--header-h)}
+.logo{font-family:var(--font-heading);font-weight:800;font-size:22px;color:var(--gold);letter-spacing:-0.01em;white-space:nowrap}
+.header__nav{display:none}
+.header__actions{display:none}
+.burger{position:relative;z-index:320;width:46px;height:46px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;flex-shrink:0}
+.burger span{display:block;width:24px;height:2px;background:var(--gold);border-radius:2px}
+@media(min-width:1024px){.burger{display:none}.header__nav{display:flex;align-items:center;gap:22px}.header__actions{display:flex;align-items:center;gap:20px}}
+.hero{position:relative;overflow:hidden;padding:clamp(60px,9vw,120px) 0 clamp(48px,7vw,96px)}
+@media(max-width:1023px){.hero{padding-bottom:clamp(110px,26vw,190px)}}
+.hero__bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero__bg picture,.hero__bg img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+.hero__bg::after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,10,10,0.95) 0%,rgba(10,10,10,0.88) 34%,rgba(10,10,10,0.62) 58%,rgba(10,10,10,0.42) 78%,rgba(10,10,10,0.9) 100%)}
+@media(min-width:1024px){.hero__bg::after{background:linear-gradient(90deg,rgba(10,10,10,0.85) 0%,rgba(10,10,10,0.6) 100%)}}
+.hero .container{position:relative;z-index:2}
+.hero__title{font-size:clamp(2rem,1.35rem + 3.2vw,4.25rem);max-width:15ch;margin-bottom:22px}
+.hero__lead{font-size:clamp(1rem,0.95rem + 0.4vw,1.16rem);color:var(--text-main);max-width:54ch;margin-bottom:32px}
+.hero__actions{display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
+@media(min-width:620px){.hero__actions{flex-direction:row;flex-wrap:wrap}}
+.hero__trust{font-size:13.5px;color:var(--text-muted);line-height:1.9}
+.eyebrow{font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 28px;border-radius:9px;font-family:var(--font-body);font-weight:600;font-size:15px;border:1.5px solid transparent;min-height:50px;text-align:center;transition:background-color .22s ease,border-color .22s ease,color .22s ease,transform .22s ease,box-shadow .22s ease}
+.btn--gold{background:var(--gold);color:#0a0a0a}
+.btn--gold:hover{background:var(--gold-hover);transform:translateY(-4px);box-shadow:0 14px 30px rgba(201,169,97,0.26)}
+.btn--outline{background:transparent;border-color:var(--gold);color:var(--gold)}
+.btn--outline:hover{background:var(--gold-soft);border-color:var(--gold-hover);color:var(--gold-hover);transform:translateY(-4px)}
+.btn--lg{padding:17px 34px;font-size:16px;min-height:56px}
+.btn--sm{padding:11px 20px;font-size:14px;min-height:44px}
+</style>
+<!-- Основные стили: загружаются асинхронно, не блокируют первую отрисовку -->
+<link rel="preload" as="style" href="style.css?v=20260811_01" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="stylesheet" href="style.css?v=20260811_01" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="style.css?v=20260811_01"></noscript>
+<!-- Preload hero отдельно для мобилки и десктопа -->
+<link rel="preload" as="image" href="hero-mobile.webp" media="(max-width: 1023px)">
+<link rel="preload" as="image" href="hero.webp" media="(min-width: 1024px)">
 </head>
 <body>
 
@@ -42,16 +94,17 @@
     <a href="index.html" class="logo">CarZ3</a>
 
     <nav class="header__nav" aria-label="Основная навигация">
-      <a href="#about">О нас</a>
-      <a href="#process">Как мы работаем</a>
-      <a href="#geo">Логистика</a>
-      <a href="#safety">Гарантии</a>
-      <a href="#reviews">Отзывы</a>
+      <a href="about.html">О компании</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="delivery.html">Доставка</a>
+      <a href="reviews.html">Обзоры</a>
+      <a href="#faq">Вопросы</a>
       <a href="#contacts">Контакты</a>
+      <a href="privacy.html" class="nav-minor">Политика</a>
     </nav>
 
     <div class="header__actions">
-      <a href="catalog.html" class="btn btn--gold btn--sm">Открыть каталог</a>
+      <a href="#pick" class="btn btn--gold btn--sm">Подобрать авто</a>
     </div>
 
     <button class="burger" type="button" data-burger aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
@@ -62,13 +115,15 @@
 
 <div class="menu" id="mobileMenu" data-menu>
   <nav class="menu__nav" aria-label="Мобильная навигация">
-    <a href="#about">О нас</a>
-    <a href="#process">Как мы работаем</a>
-    <a href="#geo">Логистика</a>
-    <a href="#safety">Гарантии</a>
-    <a href="#reviews">Отзывы</a>
+    <a href="about.html">О компании</a>
     <a href="catalog.html">Каталог</a>
+    <a href="delivery.html">Доставка и растаможка</a>
+    <a href="reviews.html">Обзоры и отзывы</a>
+    <a href="#pick">Подобрать авто</a>
+    <a href="#process">Как работаем</a>
+    <a href="#faq">Вопросы</a>
     <a href="#contacts">Контакты</a>
+    <a href="privacy.html" class="menu__minor">Политика обработки данных</a>
   </nav>
   <div class="menu__foot">
     <a href="tel:+79680734649" class="menu__phone">+7 (968) 073-46-49</a>
@@ -83,20 +138,30 @@
 <main>
 
   <section class="hero" id="about">
-    <div class="hero__bg" aria-hidden="true"></div>
+    <!-- Настоящий <img>, а не CSS-фон: сканер предзагрузки находит адрес
+         прямо в HTML и начинает качать картинку ещё до загрузки стилей.
+         Это LCP-элемент страницы, поэтому fetchpriority="high". -->
+    <div class="hero__bg" aria-hidden="true">
+      <picture>
+        <source media="(max-width: 1023px)" srcset="hero-mobile.webp">
+        <img class="hero__shot" src="hero.webp" alt="" fetchpriority="high" decoding="async" width="1920" height="1280">
+      </picture>
+    </div>
     <div class="container">
-      <p class="eyebrow" data-reveal>Япония · США · Грузия · Корея · ЕС · Китай</p>
-      <h1 class="hero__title" data-reveal>Привезём ваш автомобиль под заказ</h1>
-      <p class="hero__lead" data-reveal>
+      <p class="eyebrow">Корея · Китай · ОАЭ · ЕС · США · Грузия</p>
+      <h1 class="hero__title">Привезём ваш автомобиль под заказ</h1>
+      <p class="hero__lead">
         Подбираем автомобиль под ваш бюджет и задачу, проверяем перед покупкой и ведём сделку
         по официальному договору — с ценой, которая известна заранее и не меняется по дороге.
       </p>
-      <div class="hero__actions" data-reveal>
-        <a href="catalog.html" class="btn btn--gold btn--lg">Открыть каталог</a>
-        <a href="https://t.me/CarZ3_Catalog_bot" class="btn btn--outline btn--lg" target="_blank" rel="noopener noreferrer">Открыть в Telegram</a>
+      <div class="hero__actions">
+        <a href="#pick" class="btn btn--gold btn--lg">Подобрать автомобиль</a>
+        <a href="catalog.html" class="btn btn--outline btn--lg">Смотреть каталог</a>
       </div>
-      <p class="hero__trust" data-reveal>
-        Работаем по договору<span class="dot">·</span>Проверка перед покупкой<span class="dot">·</span>Без скрытых платежей
+      <p class="hero__trust">
+        <span class="hero__trust-item">Работаем по договору</span>
+        <span class="hero__trust-item">Проверка перед покупкой</span>
+        <span class="hero__trust-item">Без скрытых платежей</span>
       </p>
     </div>
   </section>
@@ -105,24 +170,115 @@
     <div class="container">
       <div class="stats" data-reveal>
         <div class="stat">
-          <div class="stat__num">6</div>
-          <div class="stat__label">направлений<br>поставки</div>
+          <div class="stat__num" data-count="5">5</div>
+          <div class="stat__label">лет <br>на рынке</div>
         </div>
         <div class="stat">
-          <!-- ЦИФРА: уточнить у клиента -->
-          <div class="stat__num">—</div>
-          <div class="stat__label">лет<br>на рынке</div>
+          <div class="stat__num" data-count="1000+">1000+</div>
+          <div class="stat__label">довольных <br>клиентов</div>
         </div>
         <div class="stat">
-          <!-- ЦИФРА: уточнить у клиента -->
-          <div class="stat__num">—</div>
-          <div class="stat__label">довольных<br>клиентов</div>
+          <div class="stat__num" data-count="6">6</div>
+          <div class="stat__label">направлений <br>поставки</div>
         </div>
         <div class="stat">
-          <!-- ЦИФРА: уточнить у клиента -->
-          <div class="stat__num">—</div>
-          <div class="stat__label">дней средний<br>срок доставки</div>
+          <div class="stat__num" data-count="от 7">от 7</div>
+          <div class="stat__label">дней <br>доставка</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section divider-top" id="company">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about__text" data-reveal>
+          <p class="eyebrow">О компании</p>
+          <h2 class="section-title">Пять лет возим автомобили под заказ</h2>
+          <p class="about__lead">
+            CarZ3 работает напрямую с проверенными поставщиками в Корее, Китае, ОАЭ,
+            странах ЕС, США и Грузии. За пять лет мы передали ключи более чем
+            <strong>1000 клиентов</strong>.
+          </p>
+
+          <!-- Раньше здесь шли три абзаца подряд. Те же факты, разбитые на
+               пары «утверждение → расшифровка»: читается по диагонали. -->
+          <dl class="facts">
+            <div class="fact">
+              <dt class="fact__key">Не перекупщики</dt>
+              <dd class="fact__val">Каждую сделку ведём сами — от первой заявки до номеров РФ.</dd>
+            </div>
+            <div class="fact">
+              <dt class="fact__key">Проверка до покупки</dt>
+              <dd class="fact__val">Автомобиль осматривают на месте, отчёт приходит вам до оплаты.</dd>
+            </div>
+            <div class="fact">
+              <dt class="fact__key">Цена в договоре</dt>
+              <dd class="fact__val">Фиксируется до начала сделки и не меняется по дороге.</dd>
+            </div>
+            <div class="fact">
+              <dt class="fact__key">Офис и выдача</dt>
+              <dd class="fact__val">Подольск. Приезжайте посмотреть, как всё устроено.</dd>
+            </div>
+          </dl>
+
+          <p class="about__note">
+            Машину передаём с полным пакетом документов, готовую к эксплуатации.
+          </p>
+        </div>
+
+        <div data-reveal>
+          <!-- ФОТО ПЛОЩАДКИ: если появится отдельный снимок офиса — заменить коллаж
+               одним фото: <div class="about__media"><img src="images/office.jpg" ...></div> -->
+          <div class="about__collage">
+            <img src="images/clients/tayron-1.webp" alt="Выдача автомобиля на площадке CarZ3 в Подольске" loading="lazy" decoding="async" width="600" height="450" onerror="this.closest('picture').remove()">
+            <img src="images/clients/audi-q3-sunset.webp" alt="Клиентка CarZ3 получает Audi Q3" loading="lazy" decoding="async" width="600" height="450" onerror="this.closest('picture').remove()">
+            <img src="images/clients/skoda-superb.webp" alt="Выдача Skoda Superb клиенту CarZ3" loading="lazy" decoding="async" width="600" height="450" onerror="this.closest('picture').remove()">
+            <img src="images/clients/tiguan-family.webp" alt="Семья клиентов CarZ3 с новым Volkswagen Tiguan L Pro" loading="lazy" decoding="async" width="600" height="450" onerror="this.closest('picture').remove()">
+          </div>
+        </div>
+      </div>
+
+      <div class="services">
+        <article class="service" data-reveal>
+          <div class="service__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 4.5 4.5"/>
+            </svg>
+          </div>
+          <h3 class="service__title">Подбор под задачу</h3>
+          <p class="service__desc">Находим варианты под ваш бюджет, модель и комплектацию — с отчётами о состоянии.</p>
+        </article>
+
+        <article class="service" data-reveal>
+          <div class="service__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3 5 6v6c0 4.2 2.9 7.4 7 9 4.1-1.6 7-4.8 7-9V6z"/><path d="m9.4 11.8 1.9 1.9 3.5-3.8"/>
+            </svg>
+          </div>
+          <h3 class="service__title">Проверка и выкуп</h3>
+          <p class="service__desc">Осматриваем автомобиль на месте и выкупаем — возможен вариант за наш счёт.</p>
+        </article>
+
+        <article class="service" data-reveal>
+          <div class="service__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2 6h12v10H2z"/><path d="M14 9.5h4l3 3.5V16h-7z"/><circle cx="7" cy="18.5" r="2"/><circle cx="17" cy="18.5" r="2"/>
+            </svg>
+          </div>
+          <h3 class="service__title">Доставка и таможня</h3>
+          <p class="service__desc">Логистика, таможенное оформление и уплата пошлин — полностью на нас.</p>
+        </article>
+
+        <article class="service" data-reveal>
+          <div class="service__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2.5" y="6.5" width="19" height="11" rx="2"/><path d="M6.5 10.5h11"/><path d="M6.5 13.5h7"/>
+            </svg>
+          </div>
+          <h3 class="service__title">Документы и учёт</h3>
+          <p class="service__desc">СБКТС, ЭПТС и полный пакет — автомобиль передаём готовым к постановке на учёт.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -141,6 +297,36 @@
 
       <div class="section-actions" data-reveal>
         <a href="catalog.html" class="btn btn--outline">Смотреть все автомобили</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section divider-top" id="pick">
+    <div class="container">
+      <div class="quiz-grid">
+        <div data-reveal>
+          <p class="eyebrow">Подбор</p>
+          <h2 class="section-title">Не знаете, какую машину взять?</h2>
+          <p class="section-lead section-lead--flush">
+            Ответьте на четыре вопроса — подберём 3–5 вариантов под ваш бюджет
+            и пришлём расчёт под ключ. Это ни к чему не обязывает.
+          </p>
+        </div>
+
+        <!-- Шаги и логика — в функции setupQuiz() в app.js -->
+        <div class="quiz" id="quiz" data-reveal>
+          <div class="quiz__head">
+            <span class="quiz__counter">Шаг 1 из 5</span>
+            <button class="quiz__back" type="button" hidden>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M15 5l-7 7 7 7"/>
+              </svg>
+              Назад
+            </button>
+          </div>
+          <div class="quiz__bar" aria-hidden="true"><span></span></div>
+          <div class="quiz__stage"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -181,7 +367,7 @@
                     <path d="m15.5 15.5 4.5 4.5"/>
                   </svg>
                   <h3 class="step__title">Подбор автомобиля</h3>
-                  <p class="step__desc">Находим подходящие варианты на нужном рынке — Японии, США, Грузии, Корее, странах ЕС или Китае — и присылаем их вам на согласование с отчётами.</p>
+                  <p class="step__desc">Находим подходящие варианты на нужном рынке — в Корее, Китае, ОАЭ, странах ЕС, США или Грузии — и присылаем их вам на согласование с отчётами.</p>
                 </div>
               </li>
 
@@ -258,6 +444,17 @@
                   </svg>
                   <h3 class="step__title">Выдача автомобиля</h3>
                   <p class="step__desc">Передаём автомобиль вам вместе с полным пакетом документов — можно ставить на учёт.</p>
+
+                  <!-- Фото финального шага. На десктопе его показывает липкая
+                       панель справа (PROCESS_LAST_PHOTO в app.js), поэтому
+                       здесь оно скрыто и включается только на телефоне. -->
+                  <div class="step__media">
+                    <img src="images/clients/mercedes-a.jpg"
+                           alt="Клиент CarZ3 получает автомобиль с полным пакетом документов"
+                           loading="lazy" decoding="async" width="640" height="400"
+                           style="object-position: 50% 80%;"
+                           onerror="this.closest('.step__media').remove()">
+                  </div>
                 </div>
               </li>
             </ol>
@@ -285,8 +482,8 @@
         <p class="eyebrow" data-reveal>География</p>
         <h2 class="section-title" data-reveal>Наша логистика</h2>
         <p class="section-lead section-lead--wide" data-reveal>
-          Мы организуем поставки автомобилей в Россию из Японии, США, Грузии, Кореи, стран
-          Евросоюза и Китая. От момента покупки до доставки вся логистика — под нашим
+          Мы организуем поставки автомобилей в Россию из Кореи, Китая, ОАЭ, стран
+          Евросоюза, США и Грузии. От момента покупки до доставки вся логистика — под нашим
           контролем: работаем напрямую с портами и проверенными перевозчиками и выбираем
           оптимальные маршруты, чтобы вы получали автомобиль в срок и без лишних затрат.
         </p>
@@ -295,17 +492,17 @@
       <div class="origins">
         <article class="origin-card" data-reveal>
           <span class="origin-card__num" aria-hidden="true">01</span>
-          <h3 class="origin-card__name">Япония</h3>
-        </article>
-
-        <article class="origin-card" data-reveal>
-          <span class="origin-card__num" aria-hidden="true">02</span>
           <h3 class="origin-card__name">США</h3>
         </article>
 
         <article class="origin-card" data-reveal>
-          <span class="origin-card__num" aria-hidden="true">03</span>
+          <span class="origin-card__num" aria-hidden="true">02</span>
           <h3 class="origin-card__name">Грузия</h3>
+        </article>
+
+        <article class="origin-card" data-reveal>
+          <span class="origin-card__num" aria-hidden="true">03</span>
+          <h3 class="origin-card__name">ОАЭ</h3>
         </article>
 
         <article class="origin-card" data-reveal>
@@ -411,6 +608,72 @@
     </div>
   </section>
 
+  <section class="section divider-top" id="price">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal>Прозрачность</p>
+        <h2 class="section-title" data-reveal>Из чего складывается цена</h2>
+        <p class="section-lead" data-reveal>
+          Итоговая сумма собирается из пяти частей. Все они посчитаны заранее
+          и зафиксированы в договоре.
+        </p>
+      </div>
+
+            <div class="price-parts">
+        <article class="price-part" data-reveal>
+          <span class="price-part__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 13h18M5.5 13l1.6-4.6A2 2 0 0 1 9 7h6a2 2 0 0 1 1.9 1.4L18.5 13"/>
+              <path d="M4 13v4h16v-4"/><circle cx="7.5" cy="17" r="1.4"/><circle cx="16.5" cy="17" r="1.4"/>
+            </svg>
+          </span>
+          <h3 class="price-part__label">Стоимость автомобиля</h3>
+          <p class="price-part__desc">Цена по факту покупки у поставщика или на площадке в стране приобретения.</p>
+        </article>
+        <article class="price-part" data-reveal>
+          <span class="price-part__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 17V8l9-4 9 4v9"/><path d="M3 17h18"/><path d="M12 4v13"/>
+            </svg>
+          </span>
+          <h3 class="price-part__label">Логистика до границы</h3>
+          <p class="price-part__desc">Перевозка от места покупки до российской границы: работа с портами и проверенными перевозчиками.</p>
+        </article>
+        <article class="price-part" data-reveal>
+          <span class="price-part__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3 5 6v6c0 4.2 2.9 7.4 7 9 4.1-1.6 7-4.8 7-9V6z"/>
+            </svg>
+          </span>
+          <h3 class="price-part__label">Таможенные платежи</h3>
+          <p class="price-part__desc">Пошлина и НДС — считаются по объёму двигателя, году выпуска и таможенной стоимости автомобиля.</p>
+        </article>
+        <article class="price-part" data-reveal>
+          <span class="price-part__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 7h14l-1 13H6z"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7"/><path d="M10 11v5M14 11v5"/>
+            </svg>
+          </span>
+          <h3 class="price-part__label">Утилизационный сбор</h3>
+          <p class="price-part__desc">Обязательный государственный платёж при ввозе автомобиля в Россию.</p>
+        </article>
+        <article class="price-part" data-reveal>
+          <span class="price-part__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="m9.5 14 1.8 1.8L15 12"/>
+            </svg>
+          </span>
+          <h3 class="price-part__label">Документы и оформление</h3>
+          <p class="price-part__desc">Подготовка СБКТС, ЭПТС и полного пакета документов для постановки на учёт.</p>
+        </article>
+      </div>
+
+      <p class="price-note" data-reveal>
+        Всё это <strong>уже входит</strong> в цену, которую вы видите. Сверху ничего не добавляется.
+      </p>
+    </div>
+  </section>
+
   <section class="section divider-top" id="reviews">
     <div class="container">
       <div class="section-head">
@@ -436,6 +699,60 @@
           </button>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section divider-top" id="ya-reviews">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal>Яндекс.Карты</p>
+        <h2 class="section-title" data-reveal>Что пишут о нас</h2>
+        <p class="section-lead" data-reveal>
+          Отзывы с карточки компании — публикуем как есть, без правок.
+          Рейтинг 5,0 по 25 оценкам.
+        </p>
+      </div>
+
+      <!-- Карточки собираются из массива YANDEX_REVIEWS в app.js -->
+      <div class="ya-grid" id="yaReviews"></div>
+
+      <div class="section-actions" data-reveal>
+        <a class="btn btn--outline" href="https://yandex.com/maps/-/CTfReJPu" target="_blank" rel="noopener noreferrer">Читать все отзывы на Яндекс.Картах</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section divider-top" id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal>Выдачи</p>
+        <h2 class="section-title" data-reveal>Наши клиенты</h2>
+        <p class="section-lead" data-reveal>
+          Реальные выдачи на нашей площадке. Нажмите на фото, чтобы открыть его целиком.
+        </p>
+      </div>
+
+      <!-- Плитки собираются из массива CLIENT_PHOTOS в app.js -->
+      <div class="gallery gallery--mosaic" id="galleryGrid"></div>
+
+      <div class="section-actions" data-reveal>
+        <a class="btn btn--outline" id="galleryMore" href="reviews.html">Смотреть все фото и видео</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section divider-top" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal>Вопросы</p>
+        <h2 class="section-title" data-reveal>Частые вопросы</h2>
+        <p class="section-lead" data-reveal>
+          Коротко о том, что спрашивают чаще всего. Если вашего вопроса тут нет — напишите нам.
+        </p>
+      </div>
+
+      <!-- Вопросы собираются из массива FAQ в app.js -->
+      <div class="faq" id="faqList"></div>
     </div>
   </section>
 
@@ -523,6 +840,21 @@
                         placeholder="Марка, модель, бюджет — или просто опишите, что ищете"></textarea>
             </div>
 
+            <div class="field field--check">
+              <label class="check">
+                <input type="checkbox" id="reqConsent" name="consent">
+                <span class="check__box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m5 12 5 5L20 7"/>
+                  </svg>
+                </span>
+                <span class="check__text">
+                  Даю согласие на обработку персональных данных в соответствии с
+                  <a href="privacy.html" target="_blank" rel="noopener noreferrer">политикой обработки персональных данных</a>
+                </span>
+              </label>
+            </div>
+
             <button class="btn btn--gold btn--full" type="submit">Отправить заявку</button>
             <p class="form-note">Ответим в течение рабочего дня</p>
           </form>
@@ -543,9 +875,9 @@
           <p class="contacts__address">г. Подольск,<br>ул. Правды, 34с1</p>
 
           <div class="rating">
-            <span class="rating__score">4,9</span>
+            <span class="rating__score">5,0</span>
             <span class="rating__stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="m12 3.5 2.7 5.5 6 .9-4.35 4.2 1.03 6-5.38-2.83L6.62 20.1l1.03-6L3.3 9.9l6-.9z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="m12 3.5 2.7 5.5 6 .9-4.35 4.2 1.03 6-5.38-2.83L6.62 20.1l1.03-6L3.3 9.9l6-.9z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="m12 3.5 2.7 5.5 6 .9-4.35 4.2 1.03 6-5.38-2.83L6.62 20.1l1.03-6L3.3 9.9l6-.9z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="m12 3.5 2.7 5.5 6 .9-4.35 4.2 1.03 6-5.38-2.83L6.62 20.1l1.03-6L3.3 9.9l6-.9z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="m12 3.5 2.7 5.5 6 .9-4.35 4.2 1.03 6-5.38-2.83L6.62 20.1l1.03-6L3.3 9.9l6-.9z"/></svg></span>
-            <span class="rating__source">по данным Яндекс.Карт</span>
+            <span class="rating__source">25 отзывов на Яндекс.Картах</span>
           </div>
 
           <div class="contacts__list">
@@ -577,6 +909,13 @@
               frameborder="0"
               loading="lazy"
               title="CarZ3 на карте — Подольск, улица Правды, 34с1"></iframe>
+
+            <!-- Прозрачный щит поверх карты: без него палец на телефоне
+                 «проваливается» в карту и страница перестаёт скроллиться.
+                 Снимается одним нажатием — setupMapShield() в app.js. -->
+            <button class="map-shield" type="button" data-map-shield>
+              <span class="map-shield__hint">Нажмите, чтобы двигать карту</span>
+            </button>
           </div>
 
           <!--
@@ -623,8 +962,8 @@
       <div class="footer__brand">
         <span class="logo">CarZ3</span>
         <p class="footer__about">
-          Подбор и доставка автомобилей под заказ из Японии, США, Грузии, Кореи,
-          стран ЕС и Китая. Работаем по официальному договору.
+          Подбор и доставка автомобилей под заказ из Кореи, Китая, ОАЭ,
+          стран ЕС, США и Грузии. Работаем по официальному договору.
         </p>
       </div>
 
@@ -636,6 +975,16 @@
           <a href="tel:+79645313917">+7 (964) 531-39-17</a>
           <a href="mailto:carz3zakaz@mail.ru">carz3zakaz@mail.ru</a>
           <span>г. Подольск, ул. Правды, 34с1</span>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="footer__heading">Разделы</h3>
+        <div class="footer__list">
+          <a href="about.html">О компании</a>
+          <a href="catalog.html">Каталог</a>
+          <a href="delivery.html">Доставка и растаможка</a>
+          <a href="reviews.html">Обзоры и отзывы</a>
         </div>
       </div>
 
@@ -686,10 +1035,40 @@
 
     <div class="footer__bottom">
       <span>© <span id="year">2026</span> CarZ3. Все права защищены.</span>
+      <a href="privacy.html">Политика обработки персональных данных</a>
     </div>
   </div>
 </footer>
 
-<script src="app.js"></script>
+<!-- Липкая панель связи — появляется на телефоне после первого экрана -->
+<nav class="dock" data-dock aria-label="Быстрая связь">
+  <a class="dock__btn" href="tel:+79680734649">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M6.5 3.5h3l1.5 4-2 1.4a12 12 0 0 0 5.1 5.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2z"/>
+    </svg>
+    Позвонить
+  </a>
+  <a class="dock__btn" href="https://wa.me/79680734649" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M20 11.5a7.5 7.5 0 0 1-11 6.7L4.5 19.5l1.4-4.4A7.5 7.5 0 1 1 20 11.5z"/>
+    </svg>
+    WhatsApp
+  </a>
+  <a class="dock__btn" href="https://t.me/carz3zakaz3" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="m20.5 4.5-3 15-5-4.5-2.5 3v-4.5l8-7-9.5 5.5-4.5-1.5z"/>
+    </svg>
+    Telegram
+  </a>
+  <a class="dock__btn dock__btn--gold" href="catalog.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M3 13h18M5.5 13l1.6-4.6A2 2 0 0 1 9 7h6a2 2 0 0 1 1.9 1.4L18.5 13"/>
+      <path d="M4 13v4h16v-4"/><circle cx="7.5" cy="17" r="1.4"/><circle cx="16.5" cy="17" r="1.4"/>
+    </svg>
+    Каталог
+  </a>
+</nav>
+
+<script src="app.js?v=20260811_01" defer></script>
 </body>
 </html>
