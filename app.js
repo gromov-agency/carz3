@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   'use strict';
   function imgs(folder, prefix, count, ext) {
     var out = [];
@@ -1155,12 +1155,19 @@
     var countBox = document.getElementById('catalogCount');
     var noteCount = document.getElementById('catalogNoteCount');
     var shown = CARS.slice(0, CATALOG_LIMIT);
-    var active = 'all';
+    var activeCountry = 'all';
+    var activeCondition = 'all';
     if (noteCount) noteCount.textContent = shown.length;
     function draw() {
-      var list = active === 'all'
-        ? shown
-        : shown.filter(function (car) { return carCategory(car) === active; });
+      var list = shown.filter(function (car) {
+        var c = car.location || 'Другое';
+        var isNew = (typeof car.mileage === 'number' && car.mileage === 0);
+        var s = isNew ? 'new' : 'used';
+        
+        var matchCountry = (activeCountry === 'all') || (c === activeCountry);
+        var matchCondition = (activeCondition === 'all') || (s === activeCondition);
+        return matchCountry && matchCondition;
+      });
       grid.innerHTML = list.map(carCardHtml).join('');
       if (countBox) {
         countBox.textContent = list.length
@@ -1171,34 +1178,52 @@
     }
     function buildFilters() {
       if (!filtersBox) return;
-      var groups = {};
+      
+      var countries = {};
       shown.forEach(function (car) {
-        var key = carCategory(car);
-        groups[key] = (groups[key] || 0) + 1;
+        var c = car.location || 'Другое';
+        if (c.toLowerCase() === 'бишкек') return; // Бишкек не пиши
+        countries[c] = true;
       });
-      var ORDER = ['Китай новые', 'Китай б/у', 'Корея новые', 'Корея б/у'];
-      var keys = Object.keys(groups).sort(function (a, b) {
-        var ia = ORDER.indexOf(a), ib = ORDER.indexOf(b);
-        if (ia === -1 && ib === -1) return a.localeCompare(b, 'ru');
-        if (ia === -1) return 1;
-        if (ib === -1) return -1;
-        return ia - ib;
+      
+      var countryKeys = Object.keys(countries).sort(function(a, b) {
+         if (a === 'Китай' && b !== 'Китай') return -1;
+         if (b === 'Китай' && a !== 'Китай') return 1;
+         if (a === 'Корея' && b !== 'Корея') return -1;
+         if (b === 'Корея' && a !== 'Корея') return 1;
+         return a.localeCompare(b, 'ru');
       });
-      if (keys.length < 2) { filtersBox.innerHTML = ''; return; }
-      filtersBox.innerHTML =
-        '<button class="filter is-active" type="button" data-filter="all">Все' +
-        '<span class="filter__count">' + shown.length + '</span></button>' +
-        keys.map(function (key) {
-          return '<button class="filter" type="button" data-filter="' + esc(key) + '">' + esc(key) +
-            '<span class="filter__count">' + groups[key] + '</span></button>';
-        }).join('');
+      
+      var countryHtml = '<div class="filter-row">' +
+        '<button class="filter is-active" type="button" data-filter-type="country" data-filter="all">Все страны</button>' +
+        countryKeys.map(function (c) {
+          return '<button class="filter" type="button" data-filter-type="country" data-filter="' + esc(c) + '">' + esc(c) + '</button>';
+        }).join('') +
+        '</div>';
+
+      var conditionHtml = '<div class="filter-row">' +
+        '<button class="filter is-active" type="button" data-filter-type="condition" data-filter="all">Любое состояние</button>' +
+        '<button class="filter" type="button" data-filter-type="condition" data-filter="new">Новые авто</button>' +
+        '<button class="filter" type="button" data-filter-type="condition" data-filter="used">С пробегом</button>' +
+        '</div>';
+
+      filtersBox.innerHTML = countryHtml + conditionHtml;
+
       filtersBox.addEventListener('click', function (e) {
         var button = e.target.closest('.filter');
         if (!button) return;
-        active = button.getAttribute('data-filter');
-        filtersBox.querySelectorAll('.filter').forEach(function (el) {
+        
+        var type = button.getAttribute('data-filter-type');
+        var val = button.getAttribute('data-filter');
+        
+        if (type === 'country') activeCountry = val;
+        if (type === 'condition') activeCondition = val;
+        
+        var row = button.closest('.filter-row');
+        row.querySelectorAll('.filter').forEach(function (el) {
           el.classList.toggle('is-active', el === button);
         });
+        
         draw();
       });
     }
