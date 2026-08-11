@@ -674,7 +674,21 @@
       setOpen(!menu.classList.contains('is-open'));
     });
     menu.addEventListener('click', function (e) {
-      if (e.target.closest('a')) setOpen(false);
+      var link = e.target.closest('a');
+      if (link) {
+        setOpen(false);
+        var href = link.getAttribute('href');
+        if (href && href.startsWith('#') && href.length > 1) {
+          e.preventDefault();
+          var target = document.querySelector(href);
+          if (target) {
+            setTimeout(function() {
+              target.scrollIntoView({ behavior: 'smooth' });
+              history.pushState(null, null, href);
+            }, 150);
+          }
+        }
+      }
     });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && menu.classList.contains('is-open')) setOpen(false);
