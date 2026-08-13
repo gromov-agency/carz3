@@ -2998,6 +2998,7 @@
     var shown = CARS.slice(0, CATALOG_LIMIT);
     var activeCountry = 'all';
     var activeCondition = 'all';
+    var activeSearch = '';
     if (noteCount) noteCount.textContent = shown.length;
     function draw() {
       var list = shown.filter(function (car) {
@@ -3007,7 +3008,12 @@
         
         var matchCountry = (activeCountry === 'all') || (c === activeCountry);
         var matchCondition = (activeCondition === 'all') || (s === activeCondition);
-        return matchCountry && matchCondition;
+        var matchSearch = true;
+        if (activeSearch) {
+          var titleText = carTitle(car).toLowerCase();
+          matchSearch = titleText.indexOf(activeSearch) !== -1;
+        }
+        return matchCountry && matchCondition && matchSearch;
       });
       grid.innerHTML = list.map(carCardHtml).join('');
       if (countBox) {
@@ -3023,7 +3029,6 @@
       var countries = {};
       shown.forEach(function (car) {
         var c = car.location || 'Другое';
-        if (c.toLowerCase() === 'бишкек') return; 
         countries[c] = true;
       });
       
@@ -3035,6 +3040,12 @@
          return a.localeCompare(b, 'ru');
       });
       
+      var searchHtml = '<div class="filter-search">' +
+        '<svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>' +
+        '<input type="text" class="search-input" placeholder="Поиск по марке или модели">' +
+        '<button type="button" class="search-clear" style="display:none;" aria-label="Очистить поиск"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>' +
+        '</div>';
+
       var countryHtml = '<div class="filter-row">' +
         '<button class="filter is-active" type="button" data-filter-type="country" data-filter="all">Все страны</button>' +
         countryKeys.map(function (c) {
@@ -3048,9 +3059,30 @@
         '<button class="filter" type="button" data-filter-type="condition" data-filter="used">С пробегом</button>' +
         '</div>';
 
-      filtersBox.innerHTML = countryHtml + conditionHtml;
+      filtersBox.innerHTML = searchHtml + countryHtml + conditionHtml;
+
+      filtersBox.addEventListener('input', function (e) {
+        if (e.target.classList.contains('search-input')) {
+          activeSearch = e.target.value.toLowerCase().trim();
+          var clearBtn = e.target.parentNode.querySelector('.search-clear');
+          if (clearBtn) clearBtn.style.display = e.target.value.length > 0 ? 'flex' : 'none';
+          draw();
+        }
+      });
 
       filtersBox.addEventListener('click', function (e) {
+        var clearBtn = e.target.closest('.search-clear');
+        if (clearBtn) {
+          var input = clearBtn.parentNode.querySelector('.search-input');
+          if (input) {
+            input.value = '';
+            activeSearch = '';
+            clearBtn.style.display = 'none';
+            draw();
+          }
+          return;
+        }
+
         var button = e.target.closest('.filter');
         if (!button) return;
         
