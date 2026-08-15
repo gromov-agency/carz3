@@ -55,17 +55,14 @@
     "location": "Китай",
     "status": "Под заказ",
     "images": [
-      "images/cars/mazda-cx5/mazda-cx5-1.jpg",
-      "images/cars/mazda-cx5/mazda-cx5-10.jpg",
-      "images/cars/mazda-cx5/mazda-cx5-2.jpg",
-      "images/cars/mazda-cx5/mazda-cx5-3.jpg",
-      "images/cars/mazda-cx5/mazda-cx5-4.jpg",
-      "images/cars/mazda-cx5/mazda-cx5-5.jpg",
-      "images/cars/mazda-cx5/mazda-cx5-6.jpg",
-      "images/cars/mazda-cx5/mazda-cx5-7.jpg",
-      "images/cars/mazda-cx5/mazda-cx5-8.jpg",
-      "images/cars/mazda-cx5/mazda-cx5-9.jpg",
-      "images/cars/mazda-cx5/10.jpg"
+      "images/cars/Mazda-CX-50/Mazda-CX-50-1.jpg",
+      "images/cars/Mazda-CX-50/Mazda-CX-50-2.jpg",
+      "images/cars/Mazda-CX-50/Mazda-CX-50-3.jpg",
+      "images/cars/Mazda-CX-50/Mazda-CX-50-4.jpg",
+      "images/cars/Mazda-CX-50/Mazda-CX-50-5.jpg",
+      "images/cars/Mazda-CX-50/Mazda-CX-50-6.jpg",
+      "images/cars/Mazda-CX-50/Mazda-CX-50-7.jpg",
+      "images/cars/Mazda-CX-50/Mazda-CX-50-8.jpg"
     ],
     "manager": "alexcash2025"
   },
@@ -141,21 +138,21 @@
     "location": "Китай",
     "status": "Под заказ",
     "images": [
-      "images/cars/audi-q3/Audi-Q3-1.jpg",
-      "images/cars/audi-q3/Audi-Q3-10.jpg",
-      "images/cars/audi-q3/Audi-Q3-11.jpg",
-      "images/cars/audi-q3/Audi-Q3-12.jpg",
-      "images/cars/audi-q3/Audi-Q3-13.jpg",
-      "images/cars/audi-q3/Audi-Q3-14.jpg",
-      "images/cars/audi-q3/Audi-Q3-15.jpg",
-      "images/cars/audi-q3/Audi-Q3-2.jpg",
-      "images/cars/audi-q3/Audi-Q3-3.jpg",
-      "images/cars/audi-q3/Audi-Q3-4.jpg",
-      "images/cars/audi-q3/Audi-Q3-5.jpg",
-      "images/cars/audi-q3/Audi-Q3-6.jpg",
-      "images/cars/audi-q3/Audi-Q3-7.jpg",
-      "images/cars/audi-q3/Audi-Q3-8.jpg",
-      "images/cars/audi-q3/Audi-Q3-9.jpg"
+      "images/cars/Audi-Q3/Audi-Q3-1.jpg",
+      "images/cars/Audi-Q3/Audi-Q3-10.jpg",
+      "images/cars/Audi-Q3/Audi-Q3-11.jpg",
+      "images/cars/Audi-Q3/Audi-Q3-12.jpg",
+      "images/cars/Audi-Q3/Audi-Q3-13.jpg",
+      "images/cars/Audi-Q3/Audi-Q3-14.jpg",
+      "images/cars/Audi-Q3/Audi-Q3-15.jpg",
+      "images/cars/Audi-Q3/Audi-Q3-2.jpg",
+      "images/cars/Audi-Q3/Audi-Q3-3.jpg",
+      "images/cars/Audi-Q3/Audi-Q3-4.jpg",
+      "images/cars/Audi-Q3/Audi-Q3-5.jpg",
+      "images/cars/Audi-Q3/Audi-Q3-6.jpg",
+      "images/cars/Audi-Q3/Audi-Q3-7.jpg",
+      "images/cars/Audi-Q3/Audi-Q3-8.jpg",
+      "images/cars/Audi-Q3/Audi-Q3-9.jpg"
     ],
     "manager": "Michail2004"
   },
@@ -349,11 +346,11 @@
     "location": "Китай",
     "status": "Под заказ",
     "images": [
-      "images/cars/audi-a5-2026/audi-a5-2026-1.jpg",
-      "images/cars/audi-a5-2026/audi-a5-2026-2.jpg",
-      "images/cars/audi-a5-2026/audi-a5-2026-3.jpg",
-      "images/cars/audi-a5-2026/audi-a5-2026-4.jpg",
-      "images/cars/audi-a5-2026/audi-a5-2026-5.jpg"
+      "images/cars/AUDI-A5-2026/AUDI-A5-2026-1.jpg",
+      "images/cars/AUDI-A5-2026/AUDI-A5-2026-2.jpg",
+      "images/cars/AUDI-A5-2026/AUDI-A5-2026-3.jpg",
+      "images/cars/AUDI-A5-2026/AUDI-A5-2026-4.jpg",
+      "images/cars/AUDI-A5-2026/AUDI-A5-2026-5.jpg"
     ],
     "manager": "alexcash2025"
   },
@@ -375,14 +372,14 @@
     "location": "Китай",
     "status": "В наличии",
     "images": [
-      "images/cars/toyota-rav-4/toyota-rav-4-1.jpg",
-      "images/cars/toyota-rav-4/toyota-rav-4-2.jpg",
-      "images/cars/toyota-rav-4/toyota-rav-4-3.jpg",
-      "images/cars/toyota-rav-4/toyota-rav-4-4.jpg",
-      "images/cars/toyota-rav-4/toyota-rav-4-5.jpg",
-      "images/cars/toyota-rav-4/toyota-rav-4-6.jpg",
-      "images/cars/toyota-rav-4/toyota-rav-4-7.jpg",
-      "images/cars/toyota-rav-4/toyota-rav-4-8.jpg"
+      "images/cars/Toyota-Rav-4/Toyota-Rav-4-1.jpg",
+      "images/cars/Toyota-Rav-4/Toyota-Rav-4-2.jpg",
+      "images/cars/Toyota-Rav-4/Toyota-Rav-4-3.jpg",
+      "images/cars/Toyota-Rav-4/Toyota-Rav-4-4.jpg",
+      "images/cars/Toyota-Rav-4/Toyota-Rav-4-5.jpg",
+      "images/cars/Toyota-Rav-4/Toyota-Rav-4-6.jpg",
+      "images/cars/Toyota-Rav-4/Toyota-Rav-4-7.jpg",
+      "images/cars/Toyota-Rav-4/Toyota-Rav-4-8.jpg"
     ],
     "manager": "Michail2004"
   },
@@ -498,14 +495,14 @@
     "location": "Китай",
     "status": "Под заказ",
     "images": [
-      "images/cars/mazda-cx-50/mazda-cx-50-1.jpg",
-      "images/cars/mazda-cx-50/mazda-cx-50-2.jpg",
-      "images/cars/mazda-cx-50/mazda-cx-50-3.jpg",
-      "images/cars/mazda-cx-50/mazda-cx-50-4.jpg",
-      "images/cars/mazda-cx-50/mazda-cx-50-5.jpg",
-      "images/cars/mazda-cx-50/mazda-cx-50-6.jpg",
-      "images/cars/mazda-cx-50/mazda-cx-50-7.jpg",
-      "images/cars/mazda-cx-50/mazda-cx-50-8.jpg"
+      "images/cars/Mazda-CX-50/Mazda-CX-50-1.jpg",
+      "images/cars/Mazda-CX-50/Mazda-CX-50-2.jpg",
+      "images/cars/Mazda-CX-50/Mazda-CX-50-3.jpg",
+      "images/cars/Mazda-CX-50/Mazda-CX-50-4.jpg",
+      "images/cars/Mazda-CX-50/Mazda-CX-50-5.jpg",
+      "images/cars/Mazda-CX-50/Mazda-CX-50-6.jpg",
+      "images/cars/Mazda-CX-50/Mazda-CX-50-7.jpg",
+      "images/cars/Mazda-CX-50/Mazda-CX-50-8.jpg"
     ],
     "manager": "Michail2004"
   },
@@ -527,17 +524,17 @@
     "location": "Китай",
     "status": "Под заказ",
     "images": [
-      "images/cars/volkswagen-tiguan-l-pro/volkswagen-tiguan-l-pro-1.jpg",
-      "images/cars/volkswagen-tiguan-l-pro/volkswagen-tiguan-l-pro-2.jpg",
-      "images/cars/volkswagen-tiguan-l-pro/volkswagen-tiguan-l-pro-3.jpg",
-      "images/cars/volkswagen-tiguan-l-pro/volkswagen-tiguan-l-pro-4.jpg",
-      "images/cars/volkswagen-tiguan-l-pro/volkswagen-tiguan-l-pro-5.jpg",
-      "images/cars/volkswagen-tiguan-l-pro/volkswagen-tiguan-l-pro-6.jpg",
-      "images/cars/volkswagen-tiguan-l-pro/volkswagen-tiguan-l-pro-7.jpg",
-      "images/cars/volkswagen-tiguan-l-pro/volkswagen-tiguan-l-pro-8.jpg",
-      "images/cars/volkswagen-tiguan-l-pro/volkswagen-tiguan-l-pro-9.jpg",
-      "images/cars/volkswagen-tiguan-l-pro/volkswagen-tiguan-l-pro-10.jpg",
-      "images/cars/volkswagen-tiguan-l-pro/volkswagen-tiguan-l-pro-11.jpg"
+      "images/cars/Volkswagen-Tiguan-L-pro/Volkswagen-Tiguan-L-pro-1.jpg",
+      "images/cars/Volkswagen-Tiguan-L-pro/Volkswagen-Tiguan-L-pro-10.jpg",
+      "images/cars/Volkswagen-Tiguan-L-pro/Volkswagen-Tiguan-L-pro-11.jpg",
+      "images/cars/Volkswagen-Tiguan-L-pro/Volkswagen-Tiguan-L-pro-2.jpg",
+      "images/cars/Volkswagen-Tiguan-L-pro/Volkswagen-Tiguan-L-pro-3.jpg",
+      "images/cars/Volkswagen-Tiguan-L-pro/Volkswagen-Tiguan-L-pro-4.jpg",
+      "images/cars/Volkswagen-Tiguan-L-pro/Volkswagen-Tiguan-L-pro-5.jpg",
+      "images/cars/Volkswagen-Tiguan-L-pro/Volkswagen-Tiguan-L-pro-6.jpg",
+      "images/cars/Volkswagen-Tiguan-L-pro/Volkswagen-Tiguan-L-pro-7.jpg",
+      "images/cars/Volkswagen-Tiguan-L-pro/Volkswagen-Tiguan-L-pro-8.jpg",
+      "images/cars/Volkswagen-Tiguan-L-pro/Volkswagen-Tiguan-L-pro-9.jpg"
     ],
     "manager": "alexcash2025"
   },
@@ -559,12 +556,12 @@
     "location": "Корея",
     "status": "Под заказ",
     "images": [
-      "images/cars/hyundai-sonata/hyundai-sonata-1.jpg",
-      "images/cars/hyundai-sonata/hyundai-sonata-2.jpg",
-      "images/cars/hyundai-sonata/hyundai-sonata-3.jpg",
-      "images/cars/hyundai-sonata/hyundai-sonata-4.jpg",
-      "images/cars/hyundai-sonata/hyundai-sonata-5.jpg",
-      "images/cars/hyundai-sonata/hyundai-sonata-6.jpg"
+      "images/cars/Hyundai-Sonata/Hyundai-Sonata-1.jpg",
+      "images/cars/Hyundai-Sonata/Hyundai-Sonata-2.jpg",
+      "images/cars/Hyundai-Sonata/Hyundai-Sonata-3.jpg",
+      "images/cars/Hyundai-Sonata/Hyundai-Sonata-4.jpg",
+      "images/cars/Hyundai-Sonata/Hyundai-Sonata-5.jpg",
+      "images/cars/Hyundai-Sonata/Hyundai-Sonata-6.jpg"
     ],
     "manager": "Michail2004"
   },
@@ -586,16 +583,16 @@
     "location": "Китай",
     "status": "Под заказ",
     "images": [
-      "images/cars/volkswagen-teramont-pro/volkswagen-teramont-pro-1.jpg",
-      "images/cars/volkswagen-teramont-pro/volkswagen-teramont-pro-2.jpg",
-      "images/cars/volkswagen-teramont-pro/volkswagen-teramont-pro-3.jpg",
-      "images/cars/volkswagen-teramont-pro/volkswagen-teramont-pro-4.jpg",
-      "images/cars/volkswagen-teramont-pro/volkswagen-teramont-pro-5.jpg",
-      "images/cars/volkswagen-teramont-pro/volkswagen-teramont-pro-6.jpg",
-      "images/cars/volkswagen-teramont-pro/volkswagen-teramont-pro-7.jpg",
-      "images/cars/volkswagen-teramont-pro/volkswagen-teramont-pro-8.jpg",
-      "images/cars/volkswagen-teramont-pro/volkswagen-teramont-pro-9.jpg",
-      "images/cars/volkswagen-teramont-pro/volkswagen-teramont-pro-10.jpg"
+      "images/cars/VOLKSWAGEN-Teramont-Pro/VOLKSWAGEN-Teramont-Pro-1.jpg",
+      "images/cars/VOLKSWAGEN-Teramont-Pro/VOLKSWAGEN-Teramont-Pro-10.jpg",
+      "images/cars/VOLKSWAGEN-Teramont-Pro/VOLKSWAGEN-Teramont-Pro-2.jpg",
+      "images/cars/VOLKSWAGEN-Teramont-Pro/VOLKSWAGEN-Teramont-Pro-3.jpg",
+      "images/cars/VOLKSWAGEN-Teramont-Pro/VOLKSWAGEN-Teramont-Pro-4.jpg",
+      "images/cars/VOLKSWAGEN-Teramont-Pro/VOLKSWAGEN-Teramont-Pro-5.jpg",
+      "images/cars/VOLKSWAGEN-Teramont-Pro/VOLKSWAGEN-Teramont-Pro-6.jpg",
+      "images/cars/VOLKSWAGEN-Teramont-Pro/VOLKSWAGEN-Teramont-Pro-7.jpg",
+      "images/cars/VOLKSWAGEN-Teramont-Pro/VOLKSWAGEN-Teramont-Pro-8.jpg",
+      "images/cars/VOLKSWAGEN-Teramont-Pro/VOLKSWAGEN-Teramont-Pro-9.jpg"
     ],
     "manager": "alexcash2025"
   },
@@ -617,12 +614,12 @@
     "location": "Корея",
     "status": "Под заказ",
     "images": [
-      "images/cars/kia-k5/kia-k5-1.jpg",
-      "images/cars/kia-k5/kia-k5-2.jpg",
-      "images/cars/kia-k5/kia-k5-3.jpg",
-      "images/cars/kia-k5/kia-k5-4.jpg",
-      "images/cars/kia-k5/kia-k5-5.jpg",
-      "images/cars/kia-k5/kia-k5-6.jpg"
+      "images/cars/KIA-K5/KIA-K5-1.jpg",
+      "images/cars/KIA-K5/KIA-K5-2.jpg",
+      "images/cars/KIA-K5/KIA-K5-3.jpg",
+      "images/cars/KIA-K5/KIA-K5-4.jpg",
+      "images/cars/KIA-K5/KIA-K5-5.jpg",
+      "images/cars/KIA-K5/KIA-K5-6.jpg"
     ],
     "manager": "Michail2004"
   },
@@ -729,6 +726,7 @@
     "status": "Под заказ",
     "images": [
       "images/cars/Hyundai-Tucson/Hyundai-Tucson-1.jpg",
+      "images/cars/Hyundai-Tucson/Hyundai-Tucson-10.jpg",
       "images/cars/Hyundai-Tucson/Hyundai-Tucson-2.jpg",
       "images/cars/Hyundai-Tucson/Hyundai-Tucson-3.jpg",
       "images/cars/Hyundai-Tucson/Hyundai-Tucson-4.jpg",
@@ -736,8 +734,7 @@
       "images/cars/Hyundai-Tucson/Hyundai-Tucson-6.jpg",
       "images/cars/Hyundai-Tucson/Hyundai-Tucson-7.jpg",
       "images/cars/Hyundai-Tucson/Hyundai-Tucson-8.jpg",
-      "images/cars/Hyundai-Tucson/Hyundai-Tucson-9.jpg",
-      "images/cars/Hyundai-Tucson/Hyundai-Tucson-10.jpg"
+      "images/cars/Hyundai-Tucson/Hyundai-Tucson-9.jpg"
     ],
     "manager": "Michail2004"
   },
@@ -1080,6 +1077,7 @@
     "status": "Под заказ",
     "images": [
       "images/cars/Hyundai-Venue/Hyundai-Venue-1.jpg",
+      "images/cars/Hyundai-Venue/Hyundai-Venue-10.jpg",
       "images/cars/Hyundai-Venue/Hyundai-Venue-2.jpg",
       "images/cars/Hyundai-Venue/Hyundai-Venue-3.jpg",
       "images/cars/Hyundai-Venue/Hyundai-Venue-4.jpg",
@@ -1087,8 +1085,7 @@
       "images/cars/Hyundai-Venue/Hyundai-Venue-6.jpg",
       "images/cars/Hyundai-Venue/Hyundai-Venue-7.jpg",
       "images/cars/Hyundai-Venue/Hyundai-Venue-8.jpg",
-      "images/cars/Hyundai-Venue/Hyundai-Venue-9.jpg",
-      "images/cars/Hyundai-Venue/Hyundai-Venue-10.jpg"
+      "images/cars/Hyundai-Venue/Hyundai-Venue-9.jpg"
     ],
     "manager": "alexcash2025"
   },
@@ -1503,6 +1500,8 @@
     "status": "Под заказ",
     "images": [
       "images/cars/Volkswagen-Passat/Volkswagen-Passat-1.jpg",
+      "images/cars/Volkswagen-Passat/Volkswagen-Passat-10.jpg",
+      "images/cars/Volkswagen-Passat/Volkswagen-Passat-11.jpg",
       "images/cars/Volkswagen-Passat/Volkswagen-Passat-2.jpg",
       "images/cars/Volkswagen-Passat/Volkswagen-Passat-3.jpg",
       "images/cars/Volkswagen-Passat/Volkswagen-Passat-4.jpg",
@@ -1510,9 +1509,7 @@
       "images/cars/Volkswagen-Passat/Volkswagen-Passat-6.jpg",
       "images/cars/Volkswagen-Passat/Volkswagen-Passat-7.jpg",
       "images/cars/Volkswagen-Passat/Volkswagen-Passat-8.jpg",
-      "images/cars/Volkswagen-Passat/Volkswagen-Passat-9.jpg",
-      "images/cars/Volkswagen-Passat/Volkswagen-Passat-10.jpg",
-      "images/cars/Volkswagen-Passat/Volkswagen-Passat-11.jpg"
+      "images/cars/Volkswagen-Passat/Volkswagen-Passat-9.jpg"
     ],
     "manager": "Michail2004"
   },
@@ -1597,6 +1594,7 @@
     "status": "Под заказ",
     "images": [
       "images/cars/Mercedes-GLA/Mercedes-GLA-1.jpg",
+      "images/cars/Mercedes-GLA/Mercedes-GLA-10.jpg",
       "images/cars/Mercedes-GLA/Mercedes-GLA-2.jpg",
       "images/cars/Mercedes-GLA/Mercedes-GLA-3.jpg",
       "images/cars/Mercedes-GLA/Mercedes-GLA-4.jpg",
@@ -1604,8 +1602,7 @@
       "images/cars/Mercedes-GLA/Mercedes-GLA-6.jpg",
       "images/cars/Mercedes-GLA/Mercedes-GLA-7.jpg",
       "images/cars/Mercedes-GLA/Mercedes-GLA-8.jpg",
-      "images/cars/Mercedes-GLA/Mercedes-GLA-9.jpg",
-      "images/cars/Mercedes-GLA/Mercedes-GLA-10.jpg"
+      "images/cars/Mercedes-GLA/Mercedes-GLA-9.jpg"
     ],
     "manager": "alexcash2025"
   },
@@ -1693,6 +1690,9 @@
     "status": "Под заказ",
     "images": [
       "images/cars/Subaru-Forester/Subaru-Forester-1.jpg",
+      "images/cars/Subaru-Forester/Subaru-Forester-10.jpg",
+      "images/cars/Subaru-Forester/Subaru-Forester-11.jpg",
+      "images/cars/Subaru-Forester/Subaru-Forester-12.jpg",
       "images/cars/Subaru-Forester/Subaru-Forester-2.jpg",
       "images/cars/Subaru-Forester/Subaru-Forester-3.jpg",
       "images/cars/Subaru-Forester/Subaru-Forester-4.jpg",
@@ -1700,10 +1700,7 @@
       "images/cars/Subaru-Forester/Subaru-Forester-6.jpg",
       "images/cars/Subaru-Forester/Subaru-Forester-7.jpg",
       "images/cars/Subaru-Forester/Subaru-Forester-8.jpg",
-      "images/cars/Subaru-Forester/Subaru-Forester-9.jpg",
-      "images/cars/Subaru-Forester/Subaru-Forester-10.jpg",
-      "images/cars/Subaru-Forester/Subaru-Forester-11.jpg",
-      "images/cars/Subaru-Forester/Subaru-Forester-12.jpg"
+      "images/cars/Subaru-Forester/Subaru-Forester-9.jpg"
     ],
     "manager": "Michail2004"
   },
@@ -1726,6 +1723,10 @@
     "status": "Под заказ",
     "images": [
       "images/cars/Mercedes-GLB/Mercedes-GLB-1.jpg",
+      "images/cars/Mercedes-GLB/Mercedes-GLB-10.jpg",
+      "images/cars/Mercedes-GLB/Mercedes-GLB-11.jpg",
+      "images/cars/Mercedes-GLB/Mercedes-GLB-12.jpg",
+      "images/cars/Mercedes-GLB/Mercedes-GLB-13.jpg",
       "images/cars/Mercedes-GLB/Mercedes-GLB-2.jpg",
       "images/cars/Mercedes-GLB/Mercedes-GLB-3.jpg",
       "images/cars/Mercedes-GLB/Mercedes-GLB-4.jpg",
@@ -1733,11 +1734,7 @@
       "images/cars/Mercedes-GLB/Mercedes-GLB-6.jpg",
       "images/cars/Mercedes-GLB/Mercedes-GLB-7.jpg",
       "images/cars/Mercedes-GLB/Mercedes-GLB-8.jpg",
-      "images/cars/Mercedes-GLB/Mercedes-GLB-9.jpg",
-      "images/cars/Mercedes-GLB/Mercedes-GLB-10.jpg",
-      "images/cars/Mercedes-GLB/Mercedes-GLB-11.jpg",
-      "images/cars/Mercedes-GLB/Mercedes-GLB-12.jpg",
-      "images/cars/Mercedes-GLB/Mercedes-GLB-13.jpg"
+      "images/cars/Mercedes-GLB/Mercedes-GLB-9.jpg"
     ],
     "manager": "alexcash2025"
   },
@@ -1912,8 +1909,178 @@
       "images/cars/toyota-wildlander/3.jpg",
       "images/cars/toyota-wildlander/4.jpg",
       "images/cars/toyota-wildlander/5.jpg",
-      "images/cars/toyota-wildlander/6.jpg",
-      "images/cars/toyota-wildlander/7.jpg"
+      "images/cars/toyota-wildlander/6.jpg"
+    ],
+    "manager": "alexcash2025"
+  },
+  {
+    "id": "kia-niro-2022",
+    "brand": "KIA",
+    "model": "Niro",
+    "year": 2022,
+    "price": 2290000,
+    "engineVolume": 1.6,
+    "horsePower": 141,
+    "transmission": "Робот",
+    "drivetrain": "2WD",
+    "mileage": 38000,
+    "location": "Корея",
+    "status": "На заказ",
+    "manager": "Michail2004",
+    "features": [
+      "Гибрид"
+    ],
+    "images": [
+      "images/cars/kia-niro/kia-niro-1.jpg",
+      "images/cars/kia-niro/kia-niro-2.jpg",
+      "images/cars/kia-niro/kia-niro-3.jpg",
+      "images/cars/kia-niro/kia-niro-4.jpg",
+      "images/cars/kia-niro/kia-niro-5.jpg",
+      "images/cars/kia-niro/kia-niro-6.jpg",
+      "images/cars/kia-niro/kia-niro-7.jpg"
+    ]
+  },
+  {
+    "id": "renault-samsung-qm6-2022",
+    "brand": "Renault Samsung",
+    "model": "QM6",
+    "year": 2022,
+    "price": 2370000,
+    "engineVolume": 2,
+    "horsePower": 144,
+    "transmission": "АКПП",
+    "drivetrain": "2WD",
+    "mileage": 32000,
+    "location": "Корея",
+    "status": "На заказ",
+    "manager": "alexcash2025",
+    "features": [
+      "Бензин"
+    ],
+    "images": [
+      "images/cars/renault-samsung-qm6/renault-samsung-qm6-1.jpg",
+      "images/cars/renault-samsung-qm6/renault-samsung-qm6-2.jpg",
+      "images/cars/renault-samsung-qm6/renault-samsung-qm6-3.jpg",
+      "images/cars/renault-samsung-qm6/renault-samsung-qm6-4.jpg",
+      "images/cars/renault-samsung-qm6/renault-samsung-qm6-5.jpg",
+      "images/cars/renault-samsung-qm6/renault-samsung-qm6-6.jpg",
+      "images/cars/renault-samsung-qm6/renault-samsung-qm6-7.jpg"
+    ]
+  },
+  {
+    "id": "bmw-2-active-tourer-2022",
+    "brand": "BMW",
+    "model": "2 Series Active Tourer 218D",
+    "year": 2022,
+    "price": 3190000,
+    "engineVolume": 2,
+    "horsePower": 150,
+    "transmission": "АКПП",
+    "drivetrain": "2WD",
+    "mileage": 60000,
+    "location": "Корея",
+    "status": "На заказ",
+    "manager": "Michail2004",
+    "features": [
+      "Дизель"
+    ],
+    "images": [
+      "images/cars/bmw-2-active-tourer/bmw-2-active-tourer-1.jpg",
+      "images/cars/bmw-2-active-tourer/bmw-2-active-tourer-2.jpg",
+      "images/cars/bmw-2-active-tourer/bmw-2-active-tourer-3.jpg",
+      "images/cars/bmw-2-active-tourer/bmw-2-active-tourer-4.jpg",
+      "images/cars/bmw-2-active-tourer/bmw-2-active-tourer-5.jpg",
+      "images/cars/bmw-2-active-tourer/bmw-2-active-tourer-6.jpg",
+      "images/cars/bmw-2-active-tourer/bmw-2-active-tourer-7.jpg",
+      "images/cars/bmw-2-active-tourer/bmw-2-active-tourer-8.jpg"
+    ]
+  },
+  {
+    "id": "volkswagen-tavendor-2026",
+    "brand": "Volkswagen",
+    "model": "Tavendor",
+    "year": 2026,
+    "price": 5990000,
+    "engineVolume": 2,
+    "horsePower": 220,
+    "transmission": "Робот",
+    "drivetrain": "4WD",
+    "mileage": 0,
+    "location": "Китай",
+    "status": "В наличии",
+    "features": [
+      "Черный",
+      "Белый"
+    ],
+    "images": [
+      "images/cars/volkswagen-tavendor/volkswagen-tavendor-1.jpg",
+      "images/cars/volkswagen-tavendor/volkswagen-tavendor-2.jpg",
+      "images/cars/volkswagen-tavendor/volkswagen-tavendor-3.jpg",
+      "images/cars/volkswagen-tavendor/volkswagen-tavendor-4.jpg",
+      "images/cars/volkswagen-tavendor/volkswagen-tavendor-5.jpg",
+      "images/cars/volkswagen-tavendor/volkswagen-tavendor-6.jpg",
+      "images/cars/volkswagen-tavendor/volkswagen-tavendor-7.jpg",
+      "images/cars/volkswagen-tavendor/volkswagen-tavendor-8.jpg",
+      "images/cars/volkswagen-tavendor/volkswagen-tavendor-9.jpg",
+      "images/cars/volkswagen-tavendor/volkswagen-tavendor-10.jpg",
+      "images/cars/volkswagen-tavendor/volkswagen-tavendor-11.jpg",
+      "images/cars/volkswagen-tavendor/volkswagen-tavendor-12.jpg",
+      "images/cars/volkswagen-tavendor/volkswagen-tavendor-13.jpg"
+    ],
+    "manager": "alexcash2025"
+  },
+  {
+    "id": "changan-eado-2025",
+    "brand": "Changan",
+    "model": "Eado",
+    "year": 2025,
+    "price": 1699000,
+    "engineVolume": 1.6,
+    "horsePower": 128,
+    "transmission": "Вариатор",
+    "drivetrain": "2WD",
+    "mileage": 0,
+    "location": "Китай",
+    "status": "На заказ",
+    "manager": "Michail2004",
+    "features": [
+      "Бензин"
+    ],
+    "images": [
+      "images/cars/changan-eado/changan-eado-1.jpg",
+      "images/cars/changan-eado/changan-eado-2.jpg",
+      "images/cars/changan-eado/changan-eado-3.jpg",
+      "images/cars/changan-eado/changan-eado-4.jpg",
+      "images/cars/changan-eado/changan-eado-5.jpg",
+      "images/cars/changan-eado/changan-eado-6.jpg",
+      "images/cars/changan-eado/changan-eado-7.jpg"
+    ]
+  },
+  {
+    "id": "skoda-superb-2026",
+    "brand": "Skoda",
+    "model": "Superb",
+    "year": 2026,
+    "price": 2970000,
+    "engineVolume": 1.4,
+    "horsePower": 150,
+    "transmission": "Робот",
+    "drivetrain": "2WD",
+    "mileage": 0,
+    "location": "Китай",
+    "status": "На заказ",
+    "features": [
+      "Бензин"
+    ],
+    "images": [
+      "images/cars/skoda-superb/skoda-superb-1.jpg",
+      "images/cars/skoda-superb/skoda-superb-2.jpg",
+      "images/cars/skoda-superb/skoda-superb-3.jpg",
+      "images/cars/skoda-superb/skoda-superb-4.jpg",
+      "images/cars/skoda-superb/skoda-superb-5.jpg",
+      "images/cars/skoda-superb/skoda-superb-6.jpg",
+      "images/cars/skoda-superb/skoda-superb-7.jpg",
+      "images/cars/skoda-superb/skoda-superb-8.jpg"
     ],
     "manager": "alexcash2025"
   }
