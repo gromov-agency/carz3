@@ -53,3 +53,5 @@
 html { color-scheme: dark; }
 
 @media (max-width: 1023px) { ::-webkit-scrollbar { display: none !important; } }
+
+.contacts__socials{display:flex;gap:12px;margin-top:24px;margin-bottom:24px}.contacts__social{display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold-line);color:var(--text-main);transition:all .22s ease}.contacts__social:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}.contacts__social svg{width:22px;height:22px}
